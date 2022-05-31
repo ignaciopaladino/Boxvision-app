@@ -1,0 +1,49 @@
+{
+  "name": "boxvision-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "/tablets",
+  "dependencies": {
+    "@babel/runtime": "^7.2.0",
+    "@material-ui/core": "^3.9.0",
+    "@material-ui/icons": "^3.0.1",
+    "@material-ui/styles": "^3.0.0-alpha.6",
+    "JSON": "^1.0.0",
+    "ag-grid-community": "^19.1.4",
+    "ag-grid-react": "^19.1.2",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "facefilter": "^1.0.4",
+    "formsy-react": "^1.1.5",
+    "formsy-react-components": "^1.0.0",
+    "material-ui": "^1.0.0-beta.47",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "react": "next",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "next",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.2",
+    "react-split": "^2.0.4",
+    "react-split-pane": "^0.1.87",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^5.1.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

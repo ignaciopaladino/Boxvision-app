@@ -1,0 +1,259 @@
+a {
+  color: #eee;
+  text-decoration: none;
+}
+a:hover {
+  color: blue;
+}
+body {
+  overflow: auto;
+  overflow-y: auto;
+  background-color: white;
+  background-image: url("bg.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+  margin: 0px;
+  font-family: "SohoGothicPro-Regular", sans-serif;
+  color: black;
+}
+
+@font-face {
+  font-family: "SohoGothicPro-BoldItalic";
+  src: url("SohoGothicPro-BoldItalic.woff2") format("woff2"),
+    url("SohoGothicPro-BoldItalic.woff") format("woff"),
+    url("SohoGothicPro-BoldItalic.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "SohoGothicPro-LightItalic";
+  src: url("SohoGothicPro-LightItalic.woff2") format("woff2"),
+    url("SohoGothicPro-LightItalic.woff") format("woff"),
+    url("SohoGothicPro-LightItalic.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "SohoGothicPro-Regular";
+  src: url("SohoGothicPro-Regular.woff2") format("woff2"),
+    url("SohoGothicPro-Regular.woff") format("woff"),
+    url("SohoGothicPro-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+#jeeFaceFilterCanvas {
+  margin-top: 64px;
+  height: 100%;
+  max-width: 200%;
+  width: 100vmin;
+  transform: translate(0%, 0px) rotateY(180deg);
+  /*left: 50%;
+  top: 50%;
+  
+  transform: translate(-50%, -50%) rotateY(180deg);*/
+}
+
+.nav-bar {
+  background-color: black !important;
+  font-family: "SohoGothicPro-BoldItalic", sans-serif;
+  font-size: 20pt;
+}
+
+.box {
+  font-family: "SohoGothicPro-LightItalic", sans-serif;
+}
+.canvas-container {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.modelo-selector-paper {
+  margin-top: 25px;
+  width: 100%;
+}
+.modelo-selector {
+  width: 100%;
+  height: 100%;
+  margin-top: 15px;
+}
+
+.img-selector {
+  width: 100% !important;
+  margin-top: 22px;
+}
+
+@media (max-width: 800px) {
+  .button-selector {
+    width: 100px;
+    height: 90px !important;
+    background-color: white !important;
+    color: black !important;
+    margin-top: 15px;
+    font-family: "SohoGothicPro-Regular", sans-serif;
+  }
+}
+@media (min-width: 800px) {
+  .button-selector {
+    width: 145px;
+    height: 115px !important;
+    background-color: white !important;
+    color: black !important;
+    margin-top: 15px;
+    font-family: "SohoGothicPro-Regular", sans-serif;
+  }
+}
+.footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  width: 100vmin;
+  font-family: "SohoGothicPro-Regular", sans-serif;
+}
+
+.header {
+  position: absolute;
+  top: 78px;
+  width: 100%;
+  text-align: center;
+  width: 100vmin;
+  color: black !important;
+
+  margin-bottom: 25px;
+  font-size: 25px;
+}
+
+.precioheader {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  text-align: center;
+  width: 100vmin;
+  margin-bottom: 25px;
+  color: black !important;
+  font-size: 32px;
+}
+
+.button-footer {
+  background-color: #347cff !important;
+  width: 100%;
+  height: 90px !important;
+  font-size: 25px !important;
+  margin-top: 25px;
+  font-family: "SohoGothicPro-Regular", sans-serif;
+}
+.button-footer2 {
+  background-color: #347cff !important;
+  width: 200px;
+  height: 60px !important;
+  font-size: 22px !important;
+  font-family: "SohoGothicPro-Regular", sans-serif;
+}
+
+.modal-button {
+  padding: 0 !important;
+  margin: 0;
+  width: 500px;
+  height: 247px !important;
+  background-color: white !important;
+  font-family: "SohoGothicPro-Regular", sans-serif;
+}
+
+.modalFormGraduacion {
+  color: black;
+}
+
+.modal-img-container {
+  width: 100%;
+  height: 100%;
+}
+
+.img-modal {
+  width: 100% !important;
+}
+
+.modal-1 {
+  width: 500px !important;
+  top: 20% !important;
+}
+
+.modal-2 {
+  width: 400px !important;
+  top: 30% !important;
+}
+
+.modal-3 {
+  width: 700px !important;
+  top: 10% !important;
+}
+.modal-4 {
+  width: 700px !important;
+  top: 10% !important;
+}
+
+.button-modal {
+  background-color: transparent !important;
+  color: #347cff !important;
+  box-shadow: none !important;
+}
+
+.button-cancelar {
+  float: left;
+  color: red !important;
+}
+
+[type="radio"]:checked + label::after,
+[type="radio"].with-gap:checked + label::after {
+  background-color: rgb(255, 138, 6) !important;
+}
+[type="radio"]:checked + label::after,
+[type="radio"].with-gap:checked + label::before,
+[type="radio"].with-gap:checked + label::after {
+  border: 2px solid rgb(255, 138, 6) !important;
+}
+
+.header2 {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.row-min {
+  margin-bottom: 10px !important;
+}
+
+.left {
+  margin-top: 15%;
+  width: 100px;
+}
+.colores-selector {
+  width: 80px;
+  height: 60px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0px;
+}
+
+.img-colores {
+  width: 90% !important;
+  margin-top: 0px;
+}
+.img-reset {
+  width: 125% !important;
+  margin-top: 3px;
+}
+
+.input-graduacion {
+  width: 35% !important;
+}
+.button-graduacion {
+  width: 28%;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0px !important;
+}

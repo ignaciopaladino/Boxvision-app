@@ -1,0 +1,12 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.ipwhois.io/js/ipwhois.js"></script>
+<div id="ip"></div>
+<script>    
+    // https://www.npmjs.com/package/ip-geolocation-api-jquery
+    $(document).ready(function() {
+        var ipaddress = "";
+        var ipwhois = request_ipwhois(ipaddress);
+        console.log(ipwhois);
+        $("#ip").html("Country: " + ipwhois.country + "<br> City: " + ipwhois.city + "<br> Region: " + ipwhois.region)
+    });
+</script>

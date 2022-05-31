@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-EN" />
+
+    <title>Óptica</title>
+    <script type="text/javascript" src="./libs/jquery-3.3.1.min.js"></script>
+
+    <!-- INCLUDE JEELIZ FACEFILTER SCRIPT -->
+    <script type="text/javascript" src="./dist/jeelizFaceFilter.js"></script>
+
+    <!-- INCLUDE THREE.JS -->
+    <script type="text/javascript" src="./libs/threejs/v97/three.js"></script>
+
+    <!-- INCLUDE JEELIZRESIZER -->
+    <script type="text/javascript" src="./helpers/JeelizResizer.js"></script>
+
+    <!-- INCLUDE JEELIZ THREE.JS HELPER -->
+    <script
+      type="text/javascript"
+      src="./helpers/JeelizThreejsHelper.js"
+    ></script>
+
+    <!-- INCLUDE DEMO SCRIPT -->
+
+    <!-- INCLUDE FORK ME ON GITHUB BANNER -->
+    <!-- <script type="text/javascript" src="../../appearance/widget.js"></script> -->
+
+    <script type="text/javascript" src="./loaders/FBXLoader.js"></script>
+    <script type="text/javascript" src="./loaders/inflate.min.js"></script>
+
+    <link rel="stylesheet" href="./appearance/style.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/4b5f815970.js" crossorigin="anonymous"></script>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- <script src="https://cdn.ipwhois.io/js/ipwhois.js"></script> -->
+    <script src="https://cdn.ipwhois.io/js/ipwhois.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="./facetracking.js"></script>
+
+    <link rel="stylesheet" href="./appearance/newStyle.css" type="text/css" />
+  </head>
+
+  <body onload="main()" style="color: white">
+  <!--  <nav class="nav-bar">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo"> <a class="box">&nbsp; Box</a>Vision</a>
+         <button
+      class="colores-selector btn waves-effect waves-light "
+      style="float:right"
+      type="submit"
+      name="action"
+      onclick="reiniciar()"
+    >
+        <img src="../img/reset.png" class="img-reset" />
+    </button>
+      </div>
+     
+    </nav>
+    <div class="header2" id="headerModelo" >
+      <div id="modelo" class="header">
+         FLEXA-WAY
+      </div>
+     
+    </div>
+    <div class="header2" id="headerTracking">
+        <div id="modelo" class="header" >
+          Coloque su rostro entre las lineas punteadas
+        </div>
+        
+    </div>
+    <div class="left">
+      <form id="formColors">
+       
+    </form>
+    </div>
+    <div class="footer">
+      <div class="modelo-selector-paper">
+        <button
+          class="button-selector btn waves-effect waves-light "
+          type="submit"
+          name="action"
+          onclick="loadGlasses('Model1')"
+        >
+          <div class="modelo-selector">
+            <img src="../img/modelo1.png" class="img-selector" />
+          </div>
+        </button>
+        <button
+          class="button-selector btn waves-effect waves-light "
+          type="submit"
+          name="action"
+          onclick="loadGlasses('Model2')"
+        >
+          <div class="modelo-selector">
+            <img src="../img/modelo2.png" class="img-selector" />
+          </div>
+        </button>
+        <button
+          class="button-selector btn waves-effect waves-light "
+          type="submit"
+          name="action"
+          onclick="loadGlasses('Model3')"
+        >
+          <div class="modelo-selector">
+            <img src="../img/modelo3.png" class="img-selector" />
+          </div>
+        </button>
+        <button
+          class="button-selector btn waves-effect waves-light "
+          type="submit"
+          name="action"
+          onclick="loadGlasses('Model4')"
+        >
+          <div class="modelo-selector">
+            <img src="../img/modelo4.png" class="img-selector" />
+          </div>
+        </button>
+        <button
+          class="button-selector btn waves-effect waves-light "
+          type="submit"
+          name="action"
+          onclick="loadGlasses('Model5')"
+        >
+          <div class="modelo-selector">
+            <img src="../img/modelo5.png" class="img-selector" />
+          </div>
+        </button>
+        <button
+        class="button-selector btn waves-effect waves-light "
+        type="submit"
+        name="action"
+        onclick="loadGlasses('Model7')"
+      >
+        <div class="modelo-selector">
+          <img src="../img/modelo7.png" class="img-selector" />
+        </div>
+      </button>
+      <button
+        class="button-selector btn waves-effect waves-light "
+        type="submit"
+        name="action"
+        onclick="loadGlasses('Model8')"
+      >
+        <div class="modelo-selector">
+          <img src="../img/modelo8.png" class="img-selector" />
+        </div>
+      </button>
+      <button
+        class="button-selector btn waves-effect waves-light "
+        type="submit"
+        name="action"
+        onclick="loadGlasses('Model9')"
+      >
+        <div class="modelo-selector">
+          <img src="../img/modelo9.png" class="img-selector" />
+        </div>
+      </button>
+      <button
+      class="button-selector btn waves-effect waves-light "
+      type="submit"
+      name="action"
+      onclick="loadGlasses('Model10')"
+    >
+      <div class="modelo-selector">
+        <img src="../img/modelo10.png" class="img-selector" />
+      </div>
+    </button>
+    <button
+    class="button-selector btn waves-effect waves-light "
+    type="submit"
+    name="action"
+    onclick="loadGlasses('Model11')"
+  >
+    <div class="modelo-selector">
+      <img src="../img/modelo11.png" class="img-selector" />
+    </div>
+  </button>
+      </div>
+      <button
+        data-target="modalFormGraduacion"
+        class="button-footer btn modal-trigger waves-effect waves-light "
+      >
+        CONFIRMAR
+      </button>
+    </div>-->
+    <!-- Modal Structure -->
+    <div class="bienvenida">
+
+      <div class="logoBienv"><a class="box">&nbsp; Box</a>Vision</a></div>
+      <div class="imgBienv"><img src="../img/news/inicio-20.svg" /></div>
+      <div class="textBienv">Bienvenidos al sistema de<br> óptica virtual BoxVision</div> 
+      <div class="btnBiernv" onclick="loadLenteBienv()">CONTINUAR</div>
+      
+    </div>
+
+    <div class="homeList">
+      <div class="headerLogo"><a href="#" class="brand-logo"> <a class="box">&nbsp; Box</a>Vision</a><div class="rightIcon"><i class="fas fa-shopping-cart"></i></div></div>
+      <div class="descHomeMarco"><b>¡ELEGÍ TU ARMAZÓN!</b><br>Podés probarlo y volver a la aplicación o agregarlo y continuar coon los datos de la receta</div>
+      <div class="titleMarcos titleMarcos1" onclick="selectedList(1)">Sin Cargo <i id="icDwo" class="fas fa-chevron-down"></i></div>
+      <div id="listaLentes">   
+  
+      </div>    
+      <div class="titleMarcos titleMarcos2" onclick="selectedList(2)">Con descuento <i id="icDwo2" class="fas fa-chevron-down"></i> <div class="starsList"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+      <div id="listaLentes2">   
+  
+      </div>      
+      <!--<button
+        id="btnSegSe"
+        onclick="nextStep()"
+        disabled
+        class="button-footer btn  waves-effect waves-light "
+      >
+        CONFIRMAR
+      </button>-->
+    </div>
+
+
+    <div id="modalBienvenida" class="modal-2 modal">
+      <div class="modal-content" style="padding:0">
+        <div class="card" style="margin:0">
+          <div class="card-image">
+            <img src="../img/bienvenido.png" />
+          </div>
+          <div class="card-content" style="text-align: center; color: black">
+            <p style="font-size:26px">BIENVENIDO</p>
+            <p style="font-size:20px">
+              Con BoxVision probar y elegir tus anteojos es mucho más fácil
+            </p>
+            <br />
+            <button
+              onclick="bienvenidoClick()"
+              class="button-footer2 btn waves-effect waves-light "
+            >
+              COMENZAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalTipoCristal" class="modal-2 modal">
+      <div class="modalHeader">
+        <div class="stepsComp">
+          <div class="leftCon" id="backHeader" onclick="backTipoCristal()"><i class="fas fa-arrow-left"></i></div>
+          <div class="counterSetp">
+            <div class="stetps step1 active"></div>
+            <div class="stetps step2 active"></div>
+            <div class="stetps step3"></div>
+            <div class="stetps step4"></div>
+            <div class="stetps step5"></div>
+            <div class="stetps step6"></div>
+            <div class="stetps step7"></div>
+            <div class="stetps step8"></div>
+            <div class="stetps step9"></div>
+          </div>
+          <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+        </div>               
+        <div class="bannerImage" style="background-image: url(../img/news/h-tipo-cirstal.png);">Tipo de Cristal</div>        
+      </div>        
+      <div class="modal-content">
+        <form action="#" id="formTipoCristal"></form>
+      </div>
+      <div class="modal-footer">
+        <div class="bannerFooter"><img src="../img/news/f-prom.png" alt=""></div> 
+          <button
+          class="button-cancelar button-modal btn waves-effect waves-light "
+          onclick="reiniciar()"
+        >CANCELAR
+        </button>
+        <button
+          onclick="backTipoCristal()"
+          class="modal-close waves-effect waves-green btn-flat"
+        >
+          ATRÁS
+        </button>
+        <button
+          class="button-modal btn   waves-effect waves-light blue-bb"
+          onclick="tipoCristalSelected()"
+        >
+          CONTINUAR
+        </button>
+      </div>
+    </div>
+    <div id="modalAntiReflejo" class="modal-1 modal">
+      <div class="modalHeader modalHeader2">
+        <div class="stepsComp">
+          <div class="leftCon" id="backHeader" onclick="backTipoCristal()"><i class="fas fa-arrow-left"></i></div>
+          <div class="counterSetp">
+            <div class="stetps step1 active"></div>
+            <div class="stetps step2 active"></div>
+            <div class="stetps step3 active"></div>
+            <div class="stetps step4"></div>
+            <div class="stetps step5"></div>
+            <div class="stetps step6"></div>
+            <div class="stetps step7"></div>
+            <div class="stetps step8"></div>
+            <div class="stetps step9"></div>
+          </div>
+          <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+        </div>               
+        <div class="bannerImage" style="background-image: url(../img/news/h-antireflex-1.png);">ANTIREFLEX</div>        
+      </div>        
+
+      <div class="infUtil">
+        <div class="label">Información útil. </div><div class="imgCont"><img src="../img/news/icon-info.png" alt=""></div>
+      </div>
+
+      <div class="modal-content">
+          <div class="infoTitleUtil">¿POR QUÉ ANTIREFLEJO?</div>
+          <div class="infoDescUtil">Mejora la visión, reduce el cansancio ocular y brinda mayor atractivo a sus gafas. Elimina los reflejos de las superficies anterior y posterior de los lentes.</div>
+      </div>
+
+      <div class="modal-footer modal-footer2">
+          <button
+          class="button-cancelar button-modal btn waves-effect waves-light  blue-bb"
+          onclick="setAntireflejo(false)"
+        >SIN ANTIREFELJO
+        </button>
+        <button
+          onclick="setAntireflejo(true)"
+          class="modal-close waves-effect waves-green btn-flat blue-bb"
+        >
+          CON ANTIREFELJO
+        </button>
+      </div>
+    </div>
+
+    <div id="modalAntiReflejoSpecs" class="modal-2 modal">
+      <div class="modalHeader modalHeader2">
+        <div class="stepsComp">
+          <div class="leftCon" id="backHeader" onclick="backAntiReflejoSpec()"><i class="fas fa-arrow-left"></i></div>
+          <div class="counterSetp">
+            <div class="stetps step1 active"></div>
+            <div class="stetps step2 active"></div>
+            <div class="stetps step3 active"></div>
+            <div class="stetps step4"></div>
+            <div class="stetps step5"></div>
+            <div class="stetps step6"></div>
+            <div class="stetps step7"></div>
+            <div class="stetps step8"></div>
+            <div class="stetps step9"></div>
+          </div>
+          <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+        </div>               
+        <div class="bannerImage" style="background-image: url(../img/news/h-antireflex-2.png);">CON ANTIREFLEX</div>        
+      </div> 
+
+      <div class="modal-content">
+        <div class="titleAmaMod">¡EXCELENTE IDEA!</div>
+        <form id="formAntireflejos" action="#">
+          <p>
+            <label>
+              <input class="with-gap" name="group1" type="radio" checked />
+              <span>Tipo 1 - $100</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input class="with-gap" name="group1" type="radio" />
+              <span>Tipo 2 - $200</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input class="with-gap" name="group1" type="radio" />
+              <span>Tipo 3 - $300</span>
+            </label>
+          </p>
+        </form>
+      </div>
+      <div class="modal-footer">
+          <button
+          class="button-cancelar button-modal btn waves-effect waves-light "
+          onclick="reiniciar()"
+        >CANCELAR
+        </button>
+        <button
+          class="button-modal btn   waves-effect waves-light "
+          onclick="backAntiReflejoSpec()"
+        >
+          ATRÁS
+        </button>
+        <button
+          class="button-modal btn   waves-effect waves-light blue-bb"
+          onclick="antiReflejoSpecSelected()"
+        >
+          CONTINUAR
+        </button>
+      </div>
+    </div>
+
+    <div id="modalFotocromatico" class="modal-1 modal">     
+      <div class="modalHeader modalHeader2">
+        <div class="stepsComp">
+          <div class="leftCon" id="backHeader" onclick="backFotocromaticoSpec()"><i class="fas fa-arrow-left"></i></div>
+          <div class="counterSetp">
+            <div class="stetps step1 active"></div>
+            <div class="stetps step2 active"></div>
+            <div class="stetps step3 active"></div>
+            <div class="stetps step4 active"></div>
+            <div class="stetps step5"></div>
+            <div class="stetps step6"></div>
+            <div class="stetps step7"></div>
+            <div class="stetps step8"></div>
+            <div class="stetps step9"></div>
+          </div>
+          <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+        </div>               
+        <div class="bannerImage" style="background-image: url(../img/news/h-fotocromatico-1.png);">FOTOCROMÁTICO</div>        
+      </div> 
+
+      <div class="infUtil">
+        <div class="label">Información útil. </div><div class="imgCont"><img src="../img/news/icon-info.png" alt=""></div>
+      </div>
+
+      <div class="modal-content">
+          <div class="infoTitleUtil">¿POR QUÉ FOTOCROMÁTICO?</div>
+          <div class="infoDescUtil">Ayudan a reducir la fatiga visual, daño visual y reduce potencialmente el riesgo de cataratas en general, <b>bloqueando hasta el 100% de los rayos UV.</b> Conveniencia - no hay la necesidad de llevar dos pares de lentes.</div>
+      </div>
+     
+      <div class="modal-footer modal-footer2">
+          <button
+          class="button-cancelar button-modal btn waves-effect waves-light blue-bb"
+          onclick="setFotocromatico(false)"
+        >SIN FOTOCROMÁTICO
+        </button>
+        <button
+          class="button-modal btn   waves-effect waves-light blue-bb"
+          onclick="setFotocromatico(true)"
+        >
+          CON FOTOCROMÁTICO
+        </button>
+      </div>
+    </div>
+
+    <div id="modalFotocromaticoSpecs" class="modal-2 modal">
+      <div class="modalHeader modalHeader2">
+        <div class="stepsComp">
+          <div class="leftCon" id="backHeader" onclick="backFotocromaticoSpec()"><i class="fas fa-arrow-left"></i></div>
+          <div class="counterSetp">
+            <div class="stetps step1 active"></div>
+            <div class="stetps step2 active"></div>
+            <div class="stetps step3 active"></div>
+            <div class="stetps step4 active"></div>
+            <div class="stetps step5"></div>
+            <div class="stetps step6"></div>
+            <div class="stetps step7"></div>
+            <div class="stetps step8"></div>
+            <div class="stetps step9"></div>
+          </div>
+          <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+        </div>               
+        <div class="bannerImage" style="background-image: url(../img/news/h-fotocromatico-2.png);">CON FOTOCROMÁTICO</div>        
+      </div> 
+
+      <div class="modal-content">
+        <div class="titleAmaMod">¡EXCELENTE IDEA!</div>
+        <form action="#" id="formFotocromatico">
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+          <button
+          class="button-cancelar button-modal btn waves-effect waves-light "
+          onclick="reiniciar()"
+        >CANCELAR
+        </button>
+        <button
+          class="button-modal btn   waves-effect waves-light "
+          onclick="backFotocromaticoSpec()"
+        >
+          ATRÁS
+        </button>
+        <button
+          class="button-modal btn   waves-effect waves-light blue-bb"
+          onclick="fotocromaticoSpecSelected()"
+        >
+          CONTINUAR
+        </button>
+      </div>
+    </div>
+
+    
+
+    <div id="modalFormData" class="modal-4 modal" >
+      <div class="modalHeader">
+        <div class="stepsComp">
+          <div class="leftCon" id="backHeader" onclick="backFormData()"><i class="fas fa-arrow-left"></i></div>
+          <div class="counterSetp">
+            <div class="stetps step1 active"></div>
+            <div class="stetps step2 active"></div>
+            <div class="stetps step3 active"></div>
+            <div class="stetps step4 active"></div>
+            <div class="stetps step5 active"></div>
+            <div class="stetps step6"></div>
+            <div class="stetps step7"></div>
+            <div class="stetps step8"></div>
+            <div class="stetps step9"></div>
+          </div>
+          <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+        </div>               
+        <div class="bannerImage" style="background-image: url(../img/news/h-datos.png);">Ingrese sus datos:</div>        
+      </div>  
+
+      <div class="modal-content">        
+          <form class="col s12" id="formDataUsuario" novalidate="novalidate">
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="" id="num_afiliado" name="num_afiliado" type="text" />
+                <label for="num_afiliado">Número de Afiliado</label>
+                <span
+                  for="num_afiliado"
+                  class="helper-text"
+                  data-error="*Requerido"
+                ></span>
+              </div>
+              <div class="input-field col s12">
+                <input placeholder="" id="numero_voucher" name="numero_voucher" type="text" />
+                <label for="numero_voucher">Número de Voucher</label>
+                <span
+                for="numero_voucher"
+                class="helper-text"
+                data-error="*Requerido"         
+              ></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="" id="first_name" name="first_name" type="text" />
+                <label for="first_name">Nombre</label>
+                <span
+                for="first_name"
+                class="helper-text"
+                data-error="*Requerido"
+                ></span>
+              </div>
+
+              <div class="input-field col s12">
+                <input
+                  placeholder=""
+                  id="last_name"
+                  name="last_name"
+                  type="text"
+                />
+                <label for="last_name">Apellido</label>
+                <span
+                for="last_name"
+                class="helper-text"
+                data-error="*Requerido"
+                ></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="" id="email" name="email" type="email"  />
+                <label for="email">Email</label>
+                <span
+                  for="email"
+                  class="helper-text"
+                  data-error="email inválido"
+                  data-success="email correcto"
+                ></span>
+              </div>
+
+              <div class="input-field col s12">
+                <input
+                  placeholder=""
+                  id="telefono"
+                  name="telefono"
+                  type="text"
+                  class="validate"
+                />
+                <label for="telefono">Telefono</label>
+                <span
+                  for="telefono"
+                  class="helper-text"
+                  data-error="*Requerido"
+                ></span>
+              </div>
+            </div>
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div class="bannerFooter"><img src="../img/news/f-prom2.png" alt=""></div>  
+            <button
+            class="button-cancelar button-modal btn waves-effect waves-light "
+            onclick="reiniciar()"
+          >CANCELAR
+          </button>
+          <button
+            class="button-modal btn   waves-effect waves-light "
+            onclick="backFormData()"
+          >ATRÁS
+          </button>
+          <button
+            class="button-modal btn   waves-effect waves-light blue-bb"
+            onclick="formDataSubmit()"
+            name="action"
+          >CONTINUAR
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="modalFormEnvio" class="modal-4 modal" >
+      <div class="modalHeader">
+        <div class="stepsComp">
+          <div class="leftCon" id="backHeader" onclick="backFormEnvio()"><i class="fas fa-arrow-left"></i></div>
+          <div class="counterSetp">
+            <div class="stetps step1 active"></div>
+            <div class="stetps step2 active"></div>
+            <div class="stetps step3 active"></div>
+            <div class="stetps step4 active"></div>
+            <div class="stetps step5 active"></div>
+            <div class="stetps step6 active"></div>
+            <div class="stetps step7"></div>
+            <div class="stetps step8"></div>
+            <div class="stetps step9"></div>
+          </div>
+          <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+        </div>               
+        <div class="bannerImage" style="background-image: url(../img/news/h-envios.png);">DATOS PARA ENVÍO</div>        
+     </div> 
+        <div class="modal-content">
+            
+            <form class="col s12" id="formDataEnvio" novalidate="novalidate">             
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    placeholder=""
+                    id="direccion"
+                    name="direccion"
+                    type="text"
+                    class="validate"
+                  />
+                  <label for="direccion">Dirección</label>
+                  <span
+                    for="direccion"
+                    class="helper-text"
+                    data-error="*Requerido"
+                  ></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    placeholder=""
+                    id="ciudad"
+                    name="ciudad"
+                    type="text"
+                    class="validate"
+                  />
+                  <label for="first_name">Ciudad</label>
+                  <span
+                    for="ciudad"
+                    class="helper-text"
+                    data-error="*Requerido"
+                  ></span>
+                </div>
+  
+                <div class="input-field col s12">
+                  <input
+                    placeholder=""
+                    id="provincia"
+                    name="provincia"
+                    type="text"
+                    class="validate"
+                  />
+                  <label for="first_name">Provincia</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div class="bannerFooter"><img src="../img/news/f-prom2.png" alt=""></div>  
+              <button
+              class="button-cancelar button-modal btn waves-effect waves-light "
+              onclick="reiniciar()"
+            >CANCELAR
+            </button>
+            <button
+              class="button-modal btn   waves-effect waves-light "
+              onclick="backFormEnvio()"
+            >
+              ATRÁS
+            </button>
+            <button
+              class="button-modal btn   waves-effect waves-light blue-bb"
+              onclick="formEnvioSubmit()"
+
+            >
+              CONTINUAR
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="modalResumenGraduacion" class="modal-4 modal">
+        <div class="modalHeader">
+          <div class="stepsComp">
+            <div class="leftCon" id="backHeader" onclick="backGraduacionResumen()"><i class="fas fa-arrow-left"></i></div>
+            <div class="counterSetp">
+              <div class="stetps step1 active"></div>
+              <div class="stetps step2 active"></div>
+              <div class="stetps step3 active"></div>
+              <div class="stetps step4 active"></div>
+              <div class="stetps step5 active"></div>
+              <div class="stetps step6 active"></div>
+              <div class="stetps step7 active"></div>
+              <div class="stetps step8"></div>
+              <div class="stetps step9"></div>
+            </div>
+            <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+          </div>               
+          <div class="bannerImage" style="background-image: url(../img/news/h-confirm1.png);">CONFIRMACIÓN DE<br> DATOS DE GRADUACIÓN</div>        
+        </div>   
+        <div class="modal-content">
+            <div class="titleFormConfirms">Confirme los datos de Graduación:</div>
+              <form class="col s12" style="color: #000000">
+                <div class="row">
+                  <div class="col s3 offset-s2">
+                    ESFERA
+                  </div>
+                  <div class="col s3">
+                    CILINDRO
+                  </div>
+                  <div class="col s1">
+                    EJE
+                  </div>
+                  <div class="col s1">
+                    DNP
+                  </div>
+                 
+                </div>
+                <div class="row">
+                  <div class="col s2" style="font-size: 14px">
+                     OJO DERECHO
+                  </div>
+                  <div class="col s3">
+                    <input
+                      id="esfera_derecho_resumen"
+                      step="0.25"
+                      value="0.00"
+                      placeholder="0.00"
+                      class="input-graduacion validate"
+                    />
+                    <button          
+                    class="button-graduacion btn waves-effect waves-light "
+                    name="action"
+                    onclick="upGraduacion('esfera_derecho_resumen')"
+                    >
+                      <!-- <img src="../img/up.png" class="img-colores" /> -->
+                      <i class="fas fa-chevron-up"></i>
+                    </button>
+                    <button
+                    class="button-graduacion btn waves-effect waves-light "
+                    name="action"
+                    onclick="downGraduacion('esfera_derecho_resumen')"
+                    >
+                     <!--  <img src="../img/down.png" class="img-colores" /> -->
+                     <i class="fas fa-chevron-down"></i>
+                    </button>
+                  </div>
+                  <div class="col s3">
+                    <input
+                      id="cilindro_derecho_resumen"
+                      step="0.25"
+                      value="0.00"
+                      placeholder="0.00"
+                      class="input-graduacion validate "
+                    />
+                    <button
+                    class="button-graduacion btn waves-effect waves-light "
+                    name="action"
+                    onclick="upGraduacion('cilindro_derecho_resumen')"
+                    >
+                      <i class="fas fa-chevron-up"></i>
+                    </button>
+                    <button
+                    class="button-graduacion btn waves-effect waves-light "
+                    name="action"
+                    onclick="downGraduacion('cilindro_derecho_resumen')"
+                    >
+                      <i class="fas fa-chevron-down"></i>
+                    </button>
+                  </div>
+                  <div class="col s1">
+                    <input
+                      placeholder="0"
+                      value="0"
+                      id="eje_derecho_resumen"
+                      type="text"
+                      class=" number"
+                      />
+                      
+                  </div>
+                  <div class="col s1">
+                    <input
+                      placeholder="0.5"
+                      id="prisma_derecho_resumen"
+                      value="0.5"
+                      type="text"
+                      class="number"
+                    />
+                  </div>
+              
+                </div>
+              
+                <div class="row">
+                  <div class="col s2" style="font-size: 14px">
+                     OJO IZQUIERDO
+                  </div>
+                  <div class="col s3">
+                    <input
+                      step="0.25"
+                      value="0.00"
+                      placeholder="0.00"
+                      id="esfera_izquierdo_resumen"
+                      class="input-graduacion validate"
+                      />
+                      <button          
+                      class="button-graduacion btn waves-effect waves-light "
+                      name="action"
+                      onclick="upGraduacion('esfera_izquierdo_resumen')"
+                      >
+                        <i class="fas fa-chevron-up"></i>
+                      </button>
+                      <button
+                      class="button-graduacion btn waves-effect waves-light "
+                      name="action"
+                      onclick="downGraduacion('esfera_izquierdo_resumen')"
+                      >
+                        <i class="fas fa-chevron-down"></i>
+                      </button>
+                  </div>
+                  <div class="col s3">
+                    <input
+                      step="0.25"
+                      value="0.00"
+                      placeholder="0.00"
+                      id="cilindro_izquierdo_resumen"
+                      class="input-graduacion validate"
+                      />
+                      <button          
+                      class="button-graduacion btn waves-effect waves-light "
+                      name="action"
+                      onclick="upGraduacion('cilindro_izquierdo_resumen')"
+                      >
+                        <i class="fas fa-chevron-up"></i>
+                      </button>
+                      <button
+                      class="button-graduacion btn waves-effect waves-light "
+                      name="action"
+                      onclick="downGraduacion('cilindro_izquierdo_resumen')"
+                      >
+                        <i class="fas fa-chevron-down"></i>
+                      </button>
+                  </div>
+                  <div class="col s1">
+                    <input
+                      placeholder="0"
+                      id="eje_izquierdo_resumen"
+                      value="0"
+                      type="text"
+                      class=" validate"
+                      />
+                      
+                  </div>
+                  <div class="col s1">
+                    <input
+                      placeholder="0.5"
+                      id="prisma_izquierdo_resumen"
+                      value="0.5"
+                      class="validate"
+                    />
+                  </div>
+                 
+                </div>
+                <div class="row">
+                  <div class="col s2" style="font-size: 14px">
+                    ADICIÓN OJO DERECHO
+                  </div>
+                  <div class="col s3">
+                    <input
+                      placeholder="0.00"
+                      id="adicion_derecho_resumen"
+                      default="0.00"
+                      value="0.00"
+                      class="input-graduacion validate"
+                      />
+                      <button          
+                      class="button-graduacion btn waves-effect waves-light "
+              
+                      onclick="upGraduacion('adicion_derecho_resumen')"
+                      >
+                        <i class="fas fa-chevron-up"></i>
+                      </button>
+                      <button
+                      class="button-graduacion btn waves-effect waves-light "
+              
+                      onclick="downGraduacion('adicion_derecho_resumen')"
+                      >
+                        <i class="fas fa-chevron-down"></i>
+                      </button>
+                  </div>
+                  <div class="col s4" style="font-size: 14px">
+                    INFORMACIÓN ADICIONAL
+                  </div>
+                </div>
+              
+                <div class="row">
+                  <div class="col s2" style="font-size: 14px">
+                    ADICIÓN OJO IZQUIERDO
+                  </div>
+                  <div class="col s3">
+                    <input
+                      placeholder="0.00"
+                      value="0.00"
+                      id="adicion_izquierdo_resumen"
+                      type="text"
+                      class="input-graduacion validate"
+                      />
+                      <button          
+                      class="button-graduacion btn waves-effect waves-light "
+              
+                      onclick="upGraduacion('adicion_izquierdo_resumen')"
+                      >
+                        <i class="fas fa-chevron-up"></i>
+                      </button>
+                      <button
+                      class="button-graduacion btn waves-effect waves-light "
+              
+                      onclick="downGraduacion('adicion_izquierdo_resumen')"
+                      >
+                        <i class="fas fa-chevron-down"></i>
+                      </button>
+                  </div>
+                </div>
+
+                <div class="col s12 checkAmar" style="font-size: 14px;text-align: center;">
+                  <label>
+                      <input type="checkbox" id="formGraduacionCheck" />
+                      <span>Confirmo que la información es correcta</span>
+                    </label>
+                </div>
+
+                </form>
+        </div>
+        <div class="modal-footer">
+          <div class="bannerFooter"><img src="../img/news/f-prom.png" alt=""></div>  
+            <button
+            class="button-cancelar button-modal btn waves-effect waves-light "
+            onclick="reiniciar()"
+          >CANCELAR
+          </button>
+          <button
+            class="button-modal btn   waves-effect waves-light "
+            onclick="backGraduacionResumen()"
+          >
+            ATRÁS
+          </button>
+          <button
+            class="button-modal btn   waves-effect waves-light blue-bb"
+            onclick="formGraduacionResumenSubmit()"
+          >
+            CONTINUAR
+          </button>
+        </div>        
+      </div>
+      <div id="modalResumenPedido" class="modal-4 modal" >
+        <div class="modalHeader">
+          <div class="stepsComp">
+            <div class="leftCon" id="backHeader" onclick="backFormResumen()"><i class="fas fa-arrow-left"></i></div>
+            <div class="counterSetp">
+              <div class="stetps step1 active"></div>
+              <div class="stetps step2 active"></div>
+              <div class="stetps step3 active"></div>
+              <div class="stetps step4 active"></div>
+              <div class="stetps step5 active"></div>
+              <div class="stetps step6 active"></div>
+              <div class="stetps step7 active"></div>
+              <div class="stetps step8 active"></div>
+              <div class="stetps step9"></div>
+            </div>
+            <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+          </div>               
+          <div class="bannerImage" style="background-image: url(../img/news/h-confirm2.png);">Confirme los datos<br> del pedido:</div>        
+        </div>   
+        <div class="modal-content">
+            <div class="row row-min row-min22">
+                  <div class="input-field col s3">
+                    <img id="image_resumen" src="../img/news/lentes.png">
+                  </div>
+                  <div class="input-field col s6">
+                    <div id="marco_resumen">Modelo: </div>
+                    <div id="color_resumen">Color: </div>
+                </div>
+                <div class="input-field col s2">
+                  <div id="precio_marco_resumen"></div>
+                </div>
+                <div class="input-field col s1">
+                  <div id="delPhotoRec23" onclick="delMarco()"><i class="fas fa-edit"></i></div>
+                </div>
+              </div>
+              <div class="listPedi">
+                <div class="row row-min rowTipoCristal">
+                    <div class="input-field col s4">
+                      <div class="labelTipCristal">Tipo de<br> Cristal</div>
+                    </div>
+                    <div class="input-field col s4">
+                        <div id="cristal_resumen"></div>
+                    </div>
+                    <div class="input-field col s2">
+                      <div id="precio_cristal_resumen"></div>
+                    </div>   
+                    <div class="input-field col s2 opePedRES opePedRES2">
+                      <div id="editItemPed" onclick="editItem(1)"><i class="fas fa-edit"></i></div>  
+                      <div id="delItemPed" onclick="delItem(1)"><i class="far fa-trash-alt"></i></div>  
+                    </div>                                    
+                  </div>
+                  <div class="row row-min rowAntirefljo">
+                    <div class="input-field col s4">
+                      <div class="labelTipCristal">Antireflejo</div>
+                    </div>
+                    <div class="input-field col s4">
+                        <div class="starResumen"><i class="fas fa-star"></i></div><div id="antireflejo_resumen"></div>
+                    </div>
+                    <div class="input-field col s2">
+                      <div id="precio_antireflejo_resumen"></div>
+                    </div>  
+                    <div class="input-field col s2 opePedRES">
+                      <div id="editItemPed" onclick="editItem(2)"><i class="fas fa-edit"></i></div>  
+                      <div id="delItemPed" onclick="delItem(2)"><i class="far fa-trash-alt"></i></div>  
+                    </div>                      
+                  </div>
+                  <div class="row row-min rowFotocromatico">
+                    <div class="input-field col s4">
+                      <div class="labelTipCristal">Fotocromatico</div>
+                    </div>
+                    <div class="input-field col s4">
+                        <div class="starResumen"><i class="fas fa-star"></i></div><div id="fotocromatico_resumen"></div>
+                    </div>
+                    <div class="input-field col s2">
+                      <div id="precio_fotocromatico_resumen"></div>
+                    </div> 
+                    <div class="input-field col s2 opePedRES">
+                      <div id="editItemPed" onclick="editItem(3)"><i class="fas fa-edit"></i></div>  
+                      <div id="delItemPed" onclick="delItem(3)"><i class="far fa-trash-alt"></i></div>  
+                    </div>                     
+                  </div>
+                  <div class="row row-min rowFotoReceta">
+                    <div class="input-field col s4">
+                      <div class="labelTipCristal" id="imgRec"><img src="" alt=""></div>
+                    </div>
+                    <div class="input-field col s4">
+                        <div class="starResumen starResumen2"><i class="fas fa-paperclip"></i></div><div id="recLalb">Receta adjunta</div>
+                    </div>
+                    <div class="input-field col s4">
+                      <div id="delPhotoRec" onclick="delPhoto()"><i class="far fa-trash-alt"></i></div>
+                    </div> 
+                  </div>                  
+                  <div class="row row-min">         
+                    <div class="col s12 checkAmar" style="font-size: 14px;text-align: center;">
+                        <label>
+                            <input type="checkbox" id="formResumenCheck" />
+                            <span>Confirmo que la información es correcta</span>
+                          </label>
+                        </div>
+                  </div>
+                </div>
+                  <div class="row row-min row-min33">                
+                        <div class="input-field col s4 offset-s8">
+                            <div id="precio_total_resumen">Total: </div>
+                        </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+                <button
+                class="button-cancelar button-modal btn waves-effect waves-light "
+                onclick="reiniciar()"
+              >CANCELAR
+              </button>
+              <button
+                class="button-modal btn   waves-effect waves-light "
+                onclick="backFormResumen()"
+              >ATRÁS
+              </button>
+              <button
+                class="button-modal btn   waves-effect waves-light blue-bb"
+                onclick="formResumenSubmit()"
+  
+              >CONTINUAR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="modalFormDataResumen" class="modal-4 modal" >
+          <div class="modalHeader">
+            <div class="stepsComp">
+              <div class="leftCon" id="backHeader" onclick="backFormDataResumen()"><i class="fas fa-arrow-left"></i></div>
+              <div class="counterSetp">
+                <div class="stetps step1 active"></div>
+                <div class="stetps step2 active"></div>
+                <div class="stetps step3 active"></div>
+                <div class="stetps step4 active"></div>
+                <div class="stetps step5 active"></div>
+                <div class="stetps step6 active"></div>
+                <div class="stetps step7 active"></div>
+                <div class="stetps step8 active"></div>
+                <div class="stetps step9 active"></div>
+              </div>
+              <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+            </div>               
+            <div class="bannerImage" style="background-image: url(../img/news/h-confirm3.png);">Confirme sus datos:</div>        
+          </div>           
+          <div class="modal-content">        
+              <form class="col s12" id="formDataUsuarioResumen" novalidate="novalidate">
+                <div class="row row-min">
+                  <div class="input-field col s12">
+                    <input id="num_afiliado_resumen" name="num_afiliado" type="text" value="  "  disabled/>
+                    <label for="num_afiliado_resumen">Número de Afiliado</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <input name="numero_voucher_resumen" id="numero_voucher_resumen" type="text" value="   " disabled/>
+                    <label for="numero_voucher_resumen">Número de Voucher</label>
+                  </div>
+                </div>
+                <div class="row row-min">
+                  <div class="input-field col s12">
+                    <input  name="first_name_resumen" id="first_name_resumen" type="text" value="   " disabled />
+                    <label for="first_name_resumen">Nombre</label>
+                  </div>
+    
+                  <div class="input-field col s12">
+                    <input   name="last_name_resumen" id="last_name_resumen" type="text" value="   " disabled />
+                    <label for="last_name_resumen">Apellido</label>
+                  </div>
+                </div>
+                <div class="row row-min">
+                  <div class="input-field col s12">
+                    <input  id="email_resumen" name="email_resumen" type="text" value="   " disabled />
+                    <label for="email_resumen">Email</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <input   id="telefono_resumen" name="telefono" type="text" value="   "  disabled
+                    />
+                    <label for="telefono_resumen">Telefono</label>
+                  </div>
+                </div>
+                <div class="row row-min">
+                  <div class="input-field col s12">
+                    <input id="direccion_resumen"  name="direccion" type="text"  value="   " disabled/>
+                    <label for="direccion_resumen">Dirección</label>
+                  </div>
+                </div>
+                <div class="row row-min">
+                  <div class="input-field col s12">
+                    <input
+                      id="ciudad_resumen" name="ciudad" type="text" value="   " disabled
+                    />
+                    <label for="ciudad_resumen">Ciudad</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <input id="provincia_resumen" name="provincia" type="text" value="   " disabled />
+                    <label for="provincia_resumen">Provincia</label>
+                  </div>
+                </div>
+                <div class="row row-min2">         
+                  <div class="col s12 checkAmar" style="font-size: 14px;text-align: center;">
+                    <label>
+                        <input type="checkbox" id="formResumenDataCheck" />
+                        <span>Confirmo que la información es correcta</span>
+                      </label>
+                    </div>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+                <button
+                class="button-cancelar button-modal btn waves-effect waves-light "
+                onclick="reiniciar()"
+              >CANCELAR
+              </button>
+              <button
+                class="button-modal btn   waves-effect waves-light "
+                onclick="backFormDataResumen()"
+              >ATRÁS
+              </button>
+              <button
+                class="button-modal btn   waves-effect waves-light blue-bb ama-bb"
+                onclick="formDataResumenSubmit()"
+                name="action"
+              >ENVIAR
+              </button>
+            </div>
+          </div>
+        </div>
+
+    <div id="modalFormGraduacion" class="modal-3 modal">
+      <div class="modalHeader">
+        <div class="stepsComp">
+          <div class="leftCon" id="backHeader" onclick="backGraduacion()"><i class="fas fa-arrow-left"></i></div>
+          <div class="counterSetp">
+            <div class="stetps step1 active"></div>
+            <div class="stetps step2"></div>
+            <div class="stetps step3"></div>
+            <div class="stetps step4"></div>
+            <div class="stetps step5"></div>
+            <div class="stetps step6"></div>
+            <div class="stetps step7"></div>
+            <div class="stetps step8"></div>
+            <div class="stetps step9"></div>
+          </div>
+          <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+        </div>               
+        <div class="bannerImage" style="background-image: url(../img/news/h-graduacion.png);">Graduación</div>        
+      </div>      
+      <div class="modal-content">
+        <!-- <h5 style="color: black">
+          GRADUACIÓN
+          <i class="small material-icons" style="vertical-align:bottom"
+            >remove_red_eye</i
+          >
+        </h5> -->
+        <div class="row">
+          <form class="col s12" style="color: black">
+            <div class="row">
+              <div class="col s3 offset-s2">
+                ESFERA
+              </div>
+              <div class="col s3">
+                CILINDRO
+              </div>
+              <div class="col s1">
+                EJE
+              </div>
+              <div class="col s1">
+                DNP
+              </div>
+             
+            </div>
+            <div class="row">
+              <div class="col s2" style="font-size: 14px">
+                 OJO DERECHO
+              </div>
+              <div class="col s3">
+                <input
+                  id="esfera_derecho"
+                  step="0.25"
+                  value="0.00"
+                  placeholder="0.00"
+                  class="input-graduacion validate"
+                />
+                <button          
+                class="button-graduacion btn waves-effect waves-light "
+                name="action"
+                onclick="upGraduacion('esfera_derecho')"
+                >
+                  <!-- <img src="../img/up.png" class="img-colores" /> -->
+                  <i class="fas fa-chevron-up"></i>
+                </button>
+                <button
+                class="button-graduacion btn waves-effect waves-light "
+                name="action"
+                onclick="downGraduacion('esfera_derecho')"
+                >
+                 <!--  <img src="../img/down.png" class="img-colores" /> -->
+                 <i class="fas fa-chevron-down"></i>
+                </button>
+              </div>
+              <div class="col s3">
+                <input
+                  id="cilindro_derecho"
+                  step="0.25"
+                  value="0.00"
+                  placeholder="0.00"
+                  class="input-graduacion validate "
+                />
+                <button
+                class="button-graduacion btn waves-effect waves-light "
+                name="action"
+                onclick="upGraduacion('cilindro_derecho')"
+                >
+                  <i class="fas fa-chevron-up"></i>
+                </button>
+                <button
+                class="button-graduacion btn waves-effect waves-light "
+                name="action"
+                onclick="downGraduacion('cilindro_derecho')"
+                >
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+              </div>
+              <div class="col s1">
+                <input
+                  placeholder="0"
+                  value="0"
+                  id="eje_derecho"
+                  type="text"
+                  class=" number"
+                  />
+                  
+              </div>
+              <div class="col s1">
+                <input
+                  placeholder="0.5"
+                  id="prisma_derecho"
+                  value="0.5"
+                  type="text"
+                  class="number"
+                />
+              </div>
+          
+            </div>
+
+            <div class="row">
+              <div class="col s2" style="font-size: 14px">
+                 OJO IZQUIERDO
+              </div>
+              <div class="col s3">
+                <input
+                  step="0.25"
+                  value="0.00"
+                  placeholder="0.00"
+                  id="esfera_izquierdo"
+                  class="input-graduacion validate"
+                  />
+                  <button          
+                  class="button-graduacion btn waves-effect waves-light "
+                  name="action"
+                  onclick="upGraduacion('esfera_izquierdo')"
+                  >
+                    <i class="fas fa-chevron-up"></i>
+                  </button>
+                  <button
+                  class="button-graduacion btn waves-effect waves-light "
+                  name="action"
+                  onclick="downGraduacion('esfera_izquierdo')"
+                  >
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+              </div>
+              <div class="col s3">
+                <input
+                  step="0.25"
+                  value="0.00"
+                  placeholder="0.00"
+                  id="cilindro_izquierdo"
+                  class="input-graduacion validate"
+                  />
+                  <button          
+                  class="button-graduacion btn waves-effect waves-light "
+                  name="action"
+                  onclick="upGraduacion('cilindro_izquierdo')"
+                  >
+                    <i class="fas fa-chevron-up"></i>
+                  </button>
+                  <button
+                  class="button-graduacion btn waves-effect waves-light "
+                  name="action"
+                  onclick="downGraduacion('cilindro_izquierdo')"
+                  >
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+              </div>
+              <div class="col s1">
+                <input
+                  placeholder="0"
+                  id="eje_izquierdo"
+                  value="0"
+                  type="text"
+                  class=" validate"
+                  />
+                  
+              </div>
+              <div class="col s1">
+                <input
+                  placeholder="0.5"
+                  id="prisma_izquierdo"
+                  value="0.5"
+                  class="validate"
+                />
+              </div>
+             
+            </div>
+            <div class="row">
+              <div class="col s2" style="font-size: 14px">
+                ADICIÓN OJO DERECHO
+              </div>
+              <div class="col s3">
+                <input
+                  placeholder="0.00"
+                  id="adicion_derecho"
+                  default="0.00"
+                  value="0.00"
+                  class="input-graduacion validate"
+                  />
+                  <button          
+                  class="button-graduacion btn waves-effect waves-light "
+
+                  onclick="upGraduacion('adicion_derecho')"
+                  >
+                    <i class="fas fa-chevron-up"></i>
+                  </button>
+                  <button
+                  class="button-graduacion btn waves-effect waves-light "
+
+                  onclick="downGraduacion('adicion_derecho')"
+                  >
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+              </div>
+              <div class="col s4" style="font-size: 14px">
+                INFORMACIÓN ADICIONAL
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s2" style="font-size: 14px">
+                ADICIÓN OJO IZQUIERDO
+              </div>
+              <div class="col s3">
+                <input
+                  placeholder="0.00"
+                  value="0.00"
+                  id="adicion_izquierdo"
+                  type="text"
+                  class="input-graduacion validate"
+                  />
+                  <button          
+                  class="button-graduacion btn waves-effect waves-light "
+
+                  onclick="upGraduacion('adicion_izquierdo')"
+                  >
+                    <i class="fas fa-chevron-up"></i>
+                  </button>
+                  <button
+                  class="button-graduacion btn waves-effect waves-light "
+    
+                  onclick="downGraduacion('adicion_izquierdo')"
+                  >
+                    <i class="fas fa-chevron-down"></i>
+                  </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <div class="bannerFooter"><img src="../img/news/f-prom.png" alt=""></div>  
+        <button
+        class="button-cancelar button-modal btn waves-effect waves-light "
+        onclick="reiniciar()"
+      >CANCELAR
+      </button>
+      <button
+        class="button-modal btn waves-effect waves-light "
+        onclick="backGraduacion()"
+      >ATRÁS
+      </button>
+      <button
+        class="button-modal btn waves-effect waves-light blue-bb"
+        onclick="formGraduacionDataSubmit()"
+      >CONTINUAR
+      </button>
+    </div>
+
+    </div>
+
+
+
+
+    <div id="modalConfirmation" class="modal-2 modal">
+      <div class="modalHeader">
+        <div class="stepsComp">
+          <div class="leftCon" id="backHeader" onclick="confirmacionDone()"><i class="fas fa-arrow-left"></i></div>
+          <div class="counterSetp">
+            <div class="stetps step1 active"></div>
+            <div class="stetps step2 active"></div>
+            <div class="stetps step3 active"></div>
+            <div class="stetps step4 active"></div>
+            <div class="stetps step5 active"></div>
+            <div class="stetps step6 active"></div>
+            <div class="stetps step7 active"></div>
+            <div class="stetps step8 active"></div>
+            <div class="stetps step9 active"></div>
+          </div>
+          <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+        </div>               
+        <div class="bannerImage" style="background-image: url(../img/news/h-datos.png);">¡Pedido completado<br> correctamente!</div>        
+      </div>       
+      <div class="modal-content">
+        <div class="row">
+            <div class="col s12" style="color: black">
+                Muchas gracias por su pedido, el mismo fue recibido correctamente.
+                En breve nos pondremos en contacto con usted 
+                Tome nota de su número de pedido para su referencia
+              </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 inputFinal">
+            <div class="numPer">N° de pedido</div>
+            <div id="idPedidoConfirmacion"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        
+        <button
+           class="button-modal btn   waves-effect waves-light blue-bb ama-bb"
+           onclick="confirmacionDone()"
+         >
+           HECHO
+         </button>
+       </div>      
+    </div>
+
+    <div id="modalReiniciar" class="modal-2 modal">
+      <div class="modalHeader">
+        <div class="stepsComp">
+          <div class="leftCon" id="backHeader" onclick="backReiniciar()"><i class="fas fa-arrow-left"></i></div>
+          <div class="counterSetp">
+            <div class="stetps step1"></div>
+            <div class="stetps step2"></div>
+            <div class="stetps step3"></div>
+            <div class="stetps step4"></div>
+            <div class="stetps step5"></div>
+            <div class="stetps step6"></div>
+            <div class="stetps step7"></div>
+            <div class="stetps step8"></div>
+            <div class="stetps step9"></div>
+          </div>
+          <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+        </div>               
+        <div class="bannerImage" style="background-image: url(../img/news/h-confirm2.png);">Reiniciar compra</div>        
+      </div>       
+        <div class="modal-content">
+          <h4 style="color: black">
+            ¿Esta seguro de que desea reiniciar la página? 
+          </h4>
+          
+        </div>
+        <div class="modal-footer">
+            
+          <button
+            class="button-modal btn   waves-effect waves-light "
+            onclick="confirmarReiniciar()"
+          >
+            SI
+          </button>
+          <button
+            class="button-modal btn   waves-effect waves-light blue-bb"
+            onclick="backReiniciar()"
+          >
+            NO
+          </button>
+        </div>
+      </div>
+
+      <div id="modalProbarLente" class="modal-2 modal">
+        <div class="modalHeader">
+          <div class="stepsComp">
+            <div class="leftCon" id="backHeader" onclick="backRProcar()"><i class="fas fa-arrow-left"></i></div>
+            <div class="counterSetp">
+              <div class="stetps step1"></div>
+              <div class="stetps step2"></div>
+              <div class="stetps step3"></div>
+              <div class="stetps step4"></div>
+              <div class="stetps step5"></div>
+              <div class="stetps step6"></div>
+              <div class="stetps step7"></div>
+              <div class="stetps step8"></div>
+              <div class="stetps step9"></div>
+            </div>
+            <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+          </div>               
+          <div class="bannerImage" style="background-image: url(../img/news/h-confirm2.png);">Probar Armazón</div>        
+        </div>       
+          <div class="modal-content">
+
+            <p class="fistBloq"><b>Estas a punto de salir del sistema de óptica virtual Boxvision,</b> para probarte el armazón. Recordá volver al sitio para terminar con el proceso.</p>
+            <div class="iconIMGcont"><i class="fas fa-arrow-right"></i> <img src="../img/news/backButton.jpg" alt="backButton" /></div>
+            <p class="sqbBloq">Es fácil! Presioná dos veces el botón <b>'atrás'</b> para volver.</p>
+
+          </div>
+          <div class="modal-footer">
+              
+            <button
+              class="button-modal btn   waves-effect waves-light "
+              onclick="backRProcar()"
+            >
+            CANCELAR
+            </button>
+            <button
+              class="button-modal btn   waves-effect waves-light blue-bb"
+              onclick="confirmarTestLente()"
+            >
+              ACEPTAR
+            </button>
+          </div>
+        </div>
+
+      <div id="modalFormGraduacionFotoReceta" class="modal-3 modal">
+        <div class="modalHeader">
+          <div class="stepsComp">
+            <div class="leftCon" id="backHeader" onclick="backTipoCristal2()"><i class="fas fa-arrow-left"></i></div>
+            <div class="counterSetp">
+              <div class="stetps step1 active"></div>
+              <div class="stetps step2 active"></div>
+              <div class="stetps step3"></div>
+              <div class="stetps step4"></div>
+              <div class="stetps step5"></div>
+              <div class="stetps step6"></div>
+              <div class="stetps step7"></div>
+              <div class="stetps step8"></div>
+              <div class="stetps step9"></div>
+            </div>
+            <div class="rightCon" id="cartHeader"><div class="photo imgHeadRight"><img src="../img/news/cam-h.png" /></div><div class="cart imgHeadRight"><img src="../img/news/cart-h.png" /></div></div>
+          </div>               
+          <div class="bannerImage" style="background-image: url(../img/news/h-foto-receta.png);">SUMAR RECETA</div>        
+        </div>      
+        <div class="modal-content">
+          <!-- <h5 style="color: black">
+            GRADUACIÓN
+            <i class="small material-icons" style="vertical-align:bottom"
+              >remove_red_eye</i
+            >
+          </h5> -->
+          <div class="row">
+            <div class="pagephotNar">
+              <div class="imageFotoPa"><img src="../img/news/foto-bann.png" alt=""></div>
+              <div class="taxtBajdFPOP">¿TE GUSTARÍA AÑADIR UNA FOTO<br> DE TU RECETA AL PEDIDO?</div>
+              <div id="start-camera" class="button-modal btn blue-bb">SACAR FOTO</div>
+            </div>
+            <div class="camera-cont">
+              <div id="closeCame" onclick="closeCamera()"><i class="fas fa-times"></i></diV>
+              <div id="vid-cont"><video id="video" width="" height="" autoplay></video></div>
+              <div id="canvasContenedor"></div>
+              <img id="imageTAKEN" />
+              <button id="reinter-photo" class="button-cancelar button-modal btn waves-effect waves-light blue-bb" onclick="reintentarPhoto()">REINTENTAR</button>
+              <button id="click-photo" class="button-cancelar button-modal btn waves-effect waves-light blue-bb">-</button>
+              <button id="contin-photo" class="button-cancelar button-modal btn waves-effect waves-light blue-bb" onclick="continuarPhoto()">CONTINUAR</button>
+            </div>                  
+          </div>
+        </div>
+    
+        <div class="modal-footer">
+          <button
+          class="button-cancelar button-modal btn waves-effect waves-light "
+          onclick="reiniciar()"
+        >CANCELAR
+        </button>
+        <button
+          class="button-modal btn waves-effect waves-light "
+          onclick="backTipoCristal2()"
+        >ATRÁS
+        </button>
+        <button
+          class="button-modal btn waves-effect waves-light blue-bb"
+          onclick="formGraduacionDataSubmitRecetaFoto()"
+        >NO, CONTINUAR
+        </button>
+      </div>
+    
+      </div>
+
+
+    <!--<div class="canvas-container">
+      <img id="trackingCara" src="../img/cara.png" style="position: absolute; z-index: 1;margin-left: 25%; margin-top: 20%; width: 50%;"/>
+      <canvas width="600" height="600" id="jeeFaceFilterCanvas"></canvas>
+    </div> -->
+  </body>
+</html>

@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-EN" />
+
+    <title>Óptica</title>
+    <script type="text/javascript" src="./libs/jquery-3.3.1.min.js"></script>
+
+    <!-- INCLUDE JEELIZ FACEFILTER SCRIPT -->
+    <script type="text/javascript" src="./dist/jeelizFaceFilter.js"></script>
+
+    <!-- INCLUDE THREE.JS -->
+    <script type="text/javascript" src="./libs/threejs/v97/three.js"></script>
+
+    <!-- INCLUDE JEELIZRESIZER -->
+    <script type="text/javascript" src="./helpers/JeelizResizer.js"></script>
+
+    <!-- INCLUDE JEELIZ THREE.JS HELPER -->
+    <script
+      type="text/javascript"
+      src="./helpers/JeelizThreejsHelper.js"
+    ></script>
+
+    <!-- INCLUDE DEMO SCRIPT -->
+
+    <!-- INCLUDE FORK ME ON GITHUB BANNER -->
+    <!-- <script type="text/javascript" src="../../appearance/widget.js"></script> -->
+
+    <script type="text/javascript" src="./loaders/FBXLoader.js"></script>
+    <script type="text/javascript" src="./loaders/inflate.min.js"></script>
+
+    <link rel="stylesheet" href="./appearance/style.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="./facetracking.js"></script>
+
+  </head>
+
+  <body onload="main()" style="color: white">
+    <nav class="nav-bar">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo"> <a class="box">&nbsp; Box</a>Vision</a>
+      </div>
+    </nav>
+    <div class="header2" id="headerModelo" >
+      <div id="modelo" class="header">
+         FLEXA-WAY
+      </div>
+
+    </div>
+    <div class="header2" id="headerTracking">
+        <div id="modelo" class="header" >
+          Coloque su rostro entre las lineas punteadas
+        </div>
+        
+    </div>
+    <div class="left">
+      <form id="formColors">
+        <button
+        id="color1"
+        class="colores-selector btn waves-effect waves-light "
+        type="submit"
+        name="action"
+        onclick="loadGlasses('Model1')"
+      >
+          <img src="../img/rosa.png" class="img-colores" />
+      </button>
+      <button
+      id="color2"
+
+      class="colores-selector btn waves-effect waves-light "
+      type="submit"
+      name="action"
+      onclick="loadGlasses('Model1')"
+    >
+        <img src="../img/rosa.png" class="img-colores" />
+      </button>
+      <button
+      id="color3"
+
+      class="colores-selector btn waves-effect waves-light "
+      type="submit"
+      name="action"
+      onclick="loadGlasses('Model1')"
+      >
+        <img src="../img/rosa.png" class="img-colores" />
+      </button>
+    </form>
+    </div>
+    <div class="footer">
+      <div class="modelo-selector-paper">
+        <button
+          class="button-selector btn waves-effect waves-light "
+          type="submit"
+          name="action"
+          onclick="loadGlasses('Model1')"
+        >
+          <div class="modelo-selector">
+            <img src="../img/modelo1.png" class="img-selector" />
+          </div>
+        </button>
+        <button
+          class="button-selector btn waves-effect waves-light "
+          type="submit"
+          name="action"
+          onclick="loadGlasses('Model2')"
+        >
+          <div class="modelo-selector">
+            <img src="../img/modelo2.png" class="img-selector" />
+          </div>
+        </button>
+        <button
+          class="button-selector btn waves-effect waves-light "
+          type="submit"
+          name="action"
+          onclick="loadGlasses('Model3')"
+        >
+          <div class="modelo-selector">
+            <img src="../img/modelo3.png" class="img-selector" />
+          </div>
+        </button>
+        <button
+          class="button-selector btn waves-effect waves-light "
+          type="submit"
+          name="action"
+          onclick="loadGlasses('Model4')"
+        >
+          <div class="modelo-selector">
+            <img src="../img/modelo4.png" class="img-selector" />
+          </div>
+        </button>
+        <button
+          class="button-selector btn waves-effect waves-light "
+          type="submit"
+          name="action"
+          onclick="loadGlasses('Model5')"
+        >
+          <div class="modelo-selector">
+            <img src="../img/modelo5.png" class="img-selector" />
+          </div>
+        </button>
+      </div>
+      <button
+        data-target="modalFormGraduacion"
+        class="button-footer btn modal-trigger  waves-effect waves-light "
+      >
+        CONFIRMAR
+      </button>
+    </div>
+    <!-- Modal Structure -->
+
+    <div id="modalBienvenida" class="modal-2 modal">
+      <div class="modal-content" style="padding:0">
+        <div class="card" style="margin:0">
+          <div class="card-image">
+            <img src="../img/bienvenido.png" />
+          </div>
+          <div class="card-content" style="text-align: center; color: black">
+            <p style="font-size:26px">BIENVENIDO</p>
+            <p style="font-size:20px">
+              Con BoxVision probar y elegir tus anteojos es mucho más fácil
+            </p>
+            <br />
+            <button
+              onclick="bienvenidoClick()"
+              class="button-footer2 btn   waves-effect waves-light "
+            >
+              COMENZAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalTipoCristal" class="modal-2 modal">
+      <div class="modal-content">
+        <h4 style="color: black">
+          Tipo de Cristal
+        </h4>
+        <form action="#" id="formTipoCristal"></form>
+        <div class="modal-footer">
+          <button
+            onclick="backTipoCristal()"
+            class="modal-close waves-effect waves-green btn-flat"
+          >
+            ATRÁS
+          </button>
+          <button
+            class="button-modal btn   waves-effect waves-light "
+            onclick="tipoCristalSelected()"
+          >
+            CONTINUAR
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="modalAntiReflejo" class="modal-1 modal">
+      <button
+        class="modal-button btn waves-effect waves-light "
+        onclick="setAntireflejo(true)"
+      >
+        <div class="modal-img-container">
+          <img src="../img/conAntireflejo.png" class="img-modal" />
+        </div>
+      </button>
+      <button
+        class="modal-button btn waves-effect waves-light "
+        onclick="setAntireflejo(false)"
+      >
+        <div class="modal-img-container">
+          <img src="../img/sinAntireflejo.png" class="img-modal" />
+        </div>
+      </button>
+
+      <div class="modal-footer">
+        <button
+          onclick="backAntireflejo()"
+          class="modal-close waves-effect waves-green btn-flat"
+        >
+          Atrás
+        </button>
+      </div>
+    </div>
+
+    <div id="modalAntiReflejoSpecs" class="modal-2 modal">
+      <div class="modal-content">
+        <h4 style="color: black">
+          Antireflejo
+        </h4>
+        <form id="formAntireflejos" action="#">
+          <p>
+            <label>
+              <input class="with-gap" name="group1" type="radio" checked />
+              <span>Tipo 1 - $100</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input class="with-gap" name="group1" type="radio" />
+              <span>Tipo 2 - $200</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input class="with-gap" name="group1" type="radio" />
+              <span>Tipo 3 - $300</span>
+            </label>
+          </p>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          class="button-modal btn   waves-effect waves-light "
+          onclick="backAntiReflejoSpec()"
+        >
+          ATRÁS
+        </button>
+        <button
+          class="button-modal btn   waves-effect waves-light "
+          onclick="antiReflejoSpecSelected()"
+        >
+          CONTINUAR
+        </button>
+      </div>
+    </div>
+
+    <div id="modalFotocromatico" class="modal-1 modal">
+      <button
+        class="modal-button btn waves-effect waves-light "
+        onclick="setFotocromatico(true)"
+      >
+        <div class="modal-img-container">
+          <img src="../img/conFotocromatico.png" class="img-modal" />
+        </div>
+      </button>
+      <button
+        class="modal-button btn waves-effect waves-light "
+        onclick="setFotocromatico(false)"
+      >
+        <div class="modal-img-container">
+          <img src="../img/sinFotocromatico.png" class="img-modal" />
+        </div>
+      </button>
+
+      <div class="modal-footer">
+        <button
+          class="button-modal btn   waves-effect waves-light "
+          onclick="backFotocromatico()"
+        >
+          ATRÁS
+        </button>
+      </div>
+    </div>
+
+    <div id="modalFotocromaticoSpecs" class="modal-2 modal">
+      <div class="modal-content">
+        <h4 style="color: black">
+          Fotocromático
+        </h4>
+        <form action="#" id="formFotocromatico">
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          class="button-modal btn   waves-effect waves-light "
+          onclick="backFotocromaticoSpec()"
+        >
+          ATRÁS
+        </button>
+        <button
+          class="button-modal btn   waves-effect waves-light "
+          onclick="fotocromaticoSpecSelected()"
+        >
+          CONTINUAR
+        </button>
+      </div>
+    </div>
+
+    
+
+    <div id="modalFormData" class="modal-4 modal" >
+      <div class="modal-content">        
+          <form class="col s12" id="formDataUsuario" novalidate="novalidate">
+              <div class="row">
+                  <div class="col s6">
+              <h5 style="color: black">
+                  Ingrese sus datos:
+                </h5>
+              </div>
+              </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="" id="num_afiliado" name="num_afiliado" type="text" />
+                <label for="num_afiliado">Número de Afiliado</label>
+                <span
+                  for="num_afiliado"
+                  class="helper-text"
+                  data-error="*Requerido"
+                ></span>
+              </div>
+              <div class="input-field col s6">
+                <input placeholder="" id="numero_voucher" name="numero_voucher" type="text" />
+                <label for="numero_voucher">Número de Voucher</label>
+                <span
+                for="numero_voucher"
+                class="helper-text"
+                data-error="*Requerido"         
+              ></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="" id="first_name" name="first_name" type="text" />
+                <label for="first_name">Nombre</label>
+                <span
+                for="first_name"
+                class="helper-text"
+                data-error="*Requerido"
+                ></span>
+              </div>
+
+              <div class="input-field col s6">
+                <input
+                  placeholder=""
+                  id="last_name"
+                  name="last_name"
+                  type="text"
+                />
+                <label for="last_name">Apellido</label>
+                <span
+                for="last_name"
+                class="helper-text"
+                data-error="*Requerido"
+                ></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="" id="email" name="email" type="email"  />
+                <label for="email">Email</label>
+                <span
+                  for="email"
+                  class="helper-text"
+                  data-error="email inválido"
+                  data-success="email correcto"
+                ></span>
+              </div>
+
+              <div class="input-field col s6">
+                <input
+                  placeholder=""
+                  id="telefono"
+                  name="telefono"
+                  type="text"
+                  class="validate"
+                />
+                <label for="telefono">Telefono</label>
+                <span
+                  for="telefono"
+                  class="helper-text"
+                  data-error="*Requerido"
+                ></span>
+              </div>
+            </div>
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="button-modal btn   waves-effect waves-light "
+            onclick="backFormData()"
+          >ATRÁS
+          </button>
+          <button
+            class="button-modal btn   waves-effect waves-light "
+            onclick="formDataSubmit()"
+            name="action"
+          >CONTINUAR
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="modalFormEnvio" class="modal-4 modal" >
+        <div class="modal-content">
+            
+            <form class="col s12" id="formDataEnvio" novalidate="novalidate">
+                <div class="row">
+                    <div class="col s6">
+                <h5 style="color: black">
+                    Ingrese los datos para el envío:
+                  </h5>
+                </div>
+                </div>
+              
+              <div class="row">
+                <div class="input-field col s12">
+                  <input
+                    placeholder=""
+                    id="direccion"
+                    name="direccion"
+                    type="text"
+                    class="validate"
+                  />
+                  <label for="direccion">Dirección</label>
+                  <span
+                    for="direccion"
+                    class="helper-text"
+                    data-error="*Requerido"
+                  ></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input
+                    placeholder=""
+                    id="ciudad"
+                    name="ciudad"
+                    type="text"
+                    class="validate"
+                  />
+                  <label for="first_name">Ciudad</label>
+                  <span
+                    for="ciudad"
+                    class="helper-text"
+                    data-error="*Requerido"
+                  ></span>
+                </div>
+  
+                <div class="input-field col s6">
+                  <input
+                    placeholder=""
+                    id="provincia"
+                    name="provincia"
+                    type="text"
+                    class="validate"
+                  />
+                  <label for="first_name">Provincia</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="button-modal btn   waves-effect waves-light "
+              onclick="backFormEnvio()"
+            >
+              ATRÁS
+            </button>
+            <button
+              class="button-modal btn   waves-effect waves-light "
+              onclick="formEnvioSubmit()"
+
+            >
+              CONTINUAR
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="modalResumenGraduacion" class="modal-4 modal">
+        <div class="modal-content">
+            <div class="row">
+
+                <h5 style="color: black">
+                    Confirme los datos de Graduación:
+                    
+                  </h5>
+                </div>
+                <form class="col s12" style="color: grey">
+
+                  <div class="row">
+                      <div class="row">
+                        <div class="col s2 offset-s2">
+                          ESFERA
+                        </div>
+                        <div class="col s2">
+                          CILINDRO
+                        </div>
+                        <div class="col s2">
+                          EJE
+                        </div>
+                        <div class="col s2">
+                          PRISMA
+                        </div>
+                        <div class="col s2">
+                          BASE
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col s2" style="font-size: 14px">
+                          OJO DERECHO
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="esfera_derecho_resumen"
+                            disabled
+                          />
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="cilindro_derecho_resumen"
+                          disabled                                
+                          />
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="eje_derecho_resumen"
+                            disabled
+                          />
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="prisma_derecho_resumen"
+                            disabled
+                          />
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="base_derecho_resumen"
+                            disabled
+                          />
+                        </div>
+                      </div>
+          
+                      <div class="row">
+                        <div class="col s2" style="font-size: 14px">
+                          OJO IZQUIERDO
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="esfera_izquierdo_resumen"
+                            disabled
+                          />
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="cilindro_izquierdo_resumen"
+                            disabled
+                          />
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="eje_izquierdo_resumen"
+                            disabled
+                          />
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="prisma_izquierdo_resumen"
+                            disabled
+                          />
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="base_izquierdo_resumen"
+                            disabled
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col s2" style="font-size: 14px">
+                          ADICIÓN OJO DERECHO
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="adicion_derecho_resumen"
+                            disabled
+                          />
+                        </div>
+                        <div class="col s4" style="font-size: 14px">
+                          INFORMACIÓN ADICIONAL
+                        </div>
+                      </div>
+          
+                      <div class="row">
+                        <div class="col s2" style="font-size: 14px">
+                          ADICIÓN OJO IZQUIERDO
+                        </div>
+                        <div class="col s2">
+                          <input
+                            id="adicion_izquierdo_resumen"
+                            disabled
+                          />
+                        </div>
+                        <div class="col s5 offset-s3" style="font-size: 14px;text-align: right;">
+                            <label>
+                                <input type="checkbox" id="formGraduacionCheck" />
+                                <span>Confirmo que la información es correcta</span>
+                              </label>
+                            </div>
+                      </div>
+                      
+                  </div>
+                </form>
+                <div class="modal-footer">
+                  <button
+                    class="button-modal btn   waves-effect waves-light "
+                    onclick="backGraduacionResumen()"
+                  >
+                    ATRÁS
+                  </button>
+                  <button
+                    class="button-modal btn   waves-effect waves-light "
+                    onclick="formGraduacionResumenSubmit()"
+                  >
+                    CONTINUAR
+                  </button>
+                </div>
+        </div>
+      </div>
+      <div id="modalResumenPedido" class="modal-4 modal" >
+          <div class="modal-content">
+              <div class="row">
+                  <div class="col s6">
+              <h5 style="color: black">
+                  Confirme los datos del pedido:
+                </h5>
+              </div>
+              </div>
+              <div class="row row-min">
+                  <div class="input-field col s4">
+                    <input
+                      id="marco_resumen"
+                      type="text"
+                      disabled
+                      value=" "
+                    />
+                    <label for="marco_resumen">Modelo de marco:</label>
+                  </div>
+                  <div class="input-field col s4">
+                      <input
+                        id="color_resumen"
+                        type="text"
+                        disabled
+                        value="Negro"
+                      />
+                      <label for="color_resumen">Color de marco:</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input
+                        value=" "
+                          id="precio_marco_resumen"
+                          type="text"
+                          disabled
+                        />
+                        <label for="color_resumen">Precio:</label>
+                      </div>
+                </div>
+                <div class="row row-min">
+                    <div class="input-field col s4">
+                      <input
+                        id="cristal_resumen"
+                        type="text"
+                        value="  "
+                        disabled
+                      />
+                      <label for="cristal_resumen">Tipo de Cristal:</label>
+                    </div>
+                      <div class="input-field col s4 offset-s4">
+                          <input
+                            id="precio_cristal_resumen"
+                            type="text"
+                            value="   "
+                            disabled
+                          />
+                          <label for="precio_cristal_resumen">Precio:</label>
+                        </div>
+                  </div>
+                  <div class="row row-min">
+                      <div class="input-field col s4">
+                        <input
+                          id="antireflejo_resumen"
+                          type="text"
+                          value="   "
+
+                          disabled
+                        />
+                        <label for="antireflejo_resumen">Antireflejo:</label>
+                      
+                      </div>               
+                        <div class="input-field col s4 offset-s4">
+                            <input
+                              id="precio_antireflejo_resumen"
+                              type="text"
+                              value="   "
+
+                              disabled
+                            />
+                            <label >Precio:</label>
+                          
+                          </div>
+                    </div>
+                    <div class="row row-min">
+                        <div class="input-field col s4">
+                          <input
+                            id="fotocromatico_resumen"
+                            type="text"
+                            value="   "
+
+                            disabled
+                          />
+                          <label for="fotocromatico_resumen">Fotocromatico:</label>
+                        
+                        </div>
+                          <div class="input-field col s4 offset-s4">
+                              <input
+                                id="precio_fotocromatico_resumen"
+                                type="text"
+                                value="   "
+
+                                disabled
+                              />
+                              <label >Precio:</label>
+                            
+                            </div>
+                      </div>
+                      <div class="row row-min">                
+                          <div class="input-field col s4 offset-s8">
+                              <input
+                                id="precio_total_resumen"
+                                type="text"
+                                value="   "
+                                disabled
+                              />
+                              <label >Total:</label>
+                            </div>
+                      </div>
+                      <div class="row row-min">         
+                      <div class="col s8 offset-s4" style="font-size: 14px;text-align: right;">
+                        <label>
+                            <input type="checkbox" id="formResumenCheck" />
+                            <span>Confirmo que la información es correcta</span>
+                          </label>
+                        </div>
+                      </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="button-modal btn   waves-effect waves-light "
+                onclick="backFormResumen()"
+              >ATRÁS
+              </button>
+              <button
+                class="button-modal btn   waves-effect waves-light "
+                onclick="formResumenSubmit()"
+  
+              >CONTINUAR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="modalFormDataResumen" class="modal-4 modal" >
+          <div class="modal-content">        
+              <form class="col s12" id="formDataUsuarioResumen" novalidate="novalidate">
+                  <div class="row row-min">
+                      <div class="col s6">
+                  <h5 style="color: black">
+                      Confirme sus datos:
+                  </h5>
+                  </div>
+                  </div>
+                <div class="row row-min">
+                  <div class="input-field col s6">
+                    <input id="num_afiliado_resumen" name="num_afiliado" type="text" value="  "  disabled/>
+                    <label for="num_afiliado_resumen">Número de Afiliado</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input name="numero_voucher_resumen" id="numero_voucher_resumen" type="text" value="   " disabled/>
+                    <label for="numero_voucher_resumen">Número de Voucher</label>
+                  </div>
+                </div>
+                <div class="row row-min">
+                  <div class="input-field col s6">
+                    <input  name="first_name_resumen" id="first_name_resumen" type="text" value="   " disabled />
+                    <label for="first_name_resumen">Nombre</label>
+                  </div>
+    
+                  <div class="input-field col s6">
+                    <input   name="last_name_resumen" id="last_name_resumen" type="text" value="   " disabled />
+                    <label for="last_name_resumen">Apellido</label>
+                  </div>
+                </div>
+                <div class="row row-min">
+                  <div class="input-field col s6">
+                    <input  id="email_resumen" name="email_resumen" type="text" value="   " disabled />
+                    <label for="email_resumen">Email</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input   id="telefono_resumen" name="telefono" type="text" value="   "  disabled
+                    />
+                    <label for="telefono_resumen">Telefono</label>
+                  </div>
+                </div>
+                <div class="row row-min">
+                  <div class="input-field col s12">
+                    <input id="direccion_resumen"  name="direccion" type="text"  value="   " disabled/>
+                    <label for="direccion_resumen">Dirección</label>
+                  </div>
+                </div>
+                <div class="row row-min">
+                  <div class="input-field col s6">
+                    <input
+                      id="ciudad_resumen" name="ciudad" type="text" value="   " disabled
+                    />
+                    <label for="ciudad_resumen">Ciudad</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="provincia_resumen" name="provincia" type="text" value="   " disabled />
+                    <label for="provincia_resumen">Provincia</label>
+                  </div>
+                </div>
+                <div class="row row-min">         
+                  <div class="col s8 offset-s4" style="font-size: 14px;text-align: right;">
+                    <label>
+                        <input type="checkbox" id="formResumenDataCheck" />
+                        <span>Confirmo que la información es correcta</span>
+                      </label>
+                    </div>
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                class="button-modal btn   waves-effect waves-light "
+                onclick="backFormDataResumen()"
+              >ATRÁS
+              </button>
+              <button
+                class="button-modal btn   waves-effect waves-light "
+                onclick="formDataResumenSubmit()"
+                name="action"
+              >ENVIAR
+              </button>
+            </div>
+          </div>
+        </div>
+    <div id="modalFormGraduacion" class="modal-3 modal">
+      <div class="modal-content">
+        <h5 style="color: black">
+          GRADUACIÓN
+          <i class="small material-icons" style="vertical-align:bottom"
+            >remove_red_eye</i
+          >
+        </h5>
+        <div class="row">
+          <form class="col s12" style="color: black">
+            <div class="row">
+              <div class="col s3 offset-s2">
+                ESFERA
+              </div>
+              <div class="col s3">
+                CILINDRO
+              </div>
+              <div class="col s1">
+                EJE
+              </div>
+              <div class="col s1">
+                PRISMA
+              </div>
+              <div class="col s2" style="text-align: center;">
+                BASE
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s2" style="font-size: 14px">
+                 OJO DERECHO
+              </div>
+              <div class="col s3">
+                <input
+                  id="esfera_derecho"
+                  step="0.25"
+                  value="0.00"
+                  placeholder="0.00"
+                  class="input-graduacion validate"
+                />
+                <button          
+                class="button-graduacion btn waves-effect waves-light "
+                name="action"
+                onclick="upGraduacion('esfera_derecho')"
+                >
+                  <img src="../img/up.png" class="img-colores" />
+                </button>
+                <button
+                class="button-graduacion btn waves-effect waves-light "
+                name="action"
+                onclick="downGraduacion('esfera_derecho')"
+                >
+                  <img src="../img/down.png" class="img-colores" />
+                </button>
+              </div>
+              <div class="col s3">
+                <input
+                  id="cilindro_derecho"
+                  step="0.25"
+                  value="0.00"
+                  placeholder="0.00"
+                  class="input-graduacion validate "
+                />
+                <button
+                class="button-graduacion btn waves-effect waves-light "
+                name="action"
+                onclick="upGraduacion('cilindro_derecho')"
+                >
+                  <img src="../img/up.png" class="img-colores" />
+                </button>
+                <button
+                class="button-graduacion btn waves-effect waves-light "
+                name="action"
+                onclick="downGraduacion('cilindro_derecho')"
+                >
+                  <img src="../img/down.png" class="img-colores" />
+                </button>
+              </div>
+              <div class="col s1">
+                <input
+                  placeholder="0"
+                  value="0"
+                  id="eje_derecho"
+                  type="text"
+                  class=" number"
+                  />
+                  
+              </div>
+              <div class="col s1">
+                <input
+                  placeholder="0.5"
+                  id="prisma_derecho"
+                  value="0.5"
+                  type="text"
+                  class="number"
+                />
+              </div>
+              <div class="col s2">
+                <input
+                  placeholder="abajo"
+                  id="base_derecho"
+                  value="abajo"
+                  type="text"
+                  class="validate"
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s2" style="font-size: 14px">
+                 OJO IZQUIERDO
+              </div>
+              <div class="col s3">
+                <input
+                  step="0.25"
+                  value="0.00"
+                  placeholder="0.00"
+                  id="esfera_izquierdo"
+                  class="input-graduacion validate"
+                  />
+                  <button          
+                  class="button-graduacion btn waves-effect waves-light "
+                  name="action"
+                  onclick="upGraduacion('esfera_izquierdo')"
+                  >
+                    <img src="../img/up.png" class="img-colores" />
+                  </button>
+                  <button
+                  class="button-graduacion btn waves-effect waves-light "
+                  name="action"
+                  onclick="downGraduacion('esfera_izquierdo')"
+                  >
+                    <img src="../img/down.png" class="img-colores" />
+                  </button>
+              </div>
+              <div class="col s3">
+                <input
+                  step="0.25"
+                  value="0.00"
+                  placeholder="0.00"
+                  id="cilindro_izquierdo"
+                  class="input-graduacion validate"
+                  />
+                  <button          
+                  class="button-graduacion btn waves-effect waves-light "
+                  name="action"
+                  onclick="upGraduacion('cilindro_izquierdo')"
+                  >
+                    <img src="../img/up.png" class="img-colores" />
+                  </button>
+                  <button
+                  class="button-graduacion btn waves-effect waves-light "
+                  name="action"
+                  onclick="downGraduacion('cilindro_izquierdo')"
+                  >
+                    <img src="../img/down.png" class="img-colores" />
+                  </button>
+              </div>
+              <div class="col s1">
+                <input
+                  placeholder="0"
+                  id="eje_izquierdo"
+                  value="0"
+                  type="text"
+                  class=" validate"
+                  />
+                  
+              </div>
+              <div class="col s1">
+                <input
+                  placeholder="0.5"
+                  id="prisma_izquierdo"
+                  value="0.5"
+                  class="validate"
+                />
+              </div>
+              <div class="col s2">
+                <input
+                  placeholder="arriba"
+                  value="arriba"
+                  id="base_izquierdo"
+                  type="text"
+                  class="validate"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s2" style="font-size: 14px">
+                ADICIÓN OJO DERECHO
+              </div>
+              <div class="col s3">
+                <input
+                  placeholder="0.00"
+                  id="adicion_derecho"
+                  default="0.00"
+                  value="0.00"
+                  class="input-graduacion validate"
+                  />
+                  <button          
+                  class="button-graduacion btn waves-effect waves-light "
+
+                  onclick="upGraduacion('adicion_derecho')"
+                  >
+                    <img src="../img/up.png" class="img-colores" />
+                  </button>
+                  <button
+                  class="button-graduacion btn waves-effect waves-light "
+
+                  onclick="downGraduacion('adicion_derecho')"
+                  >
+                    <img src="../img/down.png" class="img-colores" />
+                  </button>
+              </div>
+              <div class="col s4" style="font-size: 14px">
+                INFORMACIÓN ADICIONAL
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s2" style="font-size: 14px">
+                ADICIÓN OJO IZQUIERDO
+              </div>
+              <div class="col s3">
+                <input
+                  placeholder="0.00"
+                  value="0.00"
+                  id="adicion_izquierdo"
+                  type="text"
+                  class="input-graduacion validate"
+                  />
+                  <button          
+                  class="button-graduacion btn waves-effect waves-light "
+
+                  onclick="upGraduacion('adicion_izquierdo')"
+                  >
+                    <img src="../img/up.png" class="img-colores" />
+                  </button>
+                  <button
+                  class="button-graduacion btn waves-effect waves-light "
+    
+                  onclick="downGraduacion('adicion_izquierdo')"
+                  >
+                    <img src="../img/down.png" class="img-colores" />
+                  </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            class="button-modal btn   waves-effect waves-light "
+            onclick="backGraduacion()"
+          >ATRÁS
+          </button>
+          <button
+            class="button-modal btn   waves-effect waves-light "
+            onclick="formGraduacionDataSubmit()"
+          >CONTINUAR
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="modalConfirmation" class="modal-2 modal">
+      <div class="modal-content">
+        <h4 style="color: black">
+          CONFIRMACIÓN
+        </h4>
+        <div class="row">
+            <div class="col s12" style="color: black">
+                Muchas gracias por su pedido, el mismo fue recibido correctamente.
+                En breve nos pondremos en contacto con usted 
+                Tome nota de su número de pedido para su referencia
+              </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input
+              id="idPedidoConfirmacion"  type="text" value="   " disabled
+            />
+            <label for="ciudad_resumen">Id Pedido</label>
+          </div>
+        </div>
+      <div class="modal-footer">
+       <button
+          class="button-modal btn   waves-effect waves-light "
+          onclick="confirmacionDone()"
+        >
+          HECHO
+        </button>
+      </div>
+      </div>
+    </div>
+
+    <div class="canvas-container">
+      <img id="trackingCara" src="../img/cara.png" style="position: absolute; z-index: 1;margin-left: 25%; margin-top: 20%; width: 50%;"/>
+      <canvas width="600" height="600" id="jeeFaceFilterCanvas"></canvas>
+    </div>
+  </body>
+</html>

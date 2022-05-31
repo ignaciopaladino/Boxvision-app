@@ -1,0 +1,1173 @@
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #3c3c3c #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #3c3c3c;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+body {
+    background-image: none;
+    background-color: #ebeae9;
+    overflow: hidden;
+}
+.modal {
+    width: 100% !important;
+    margin-top: 0px;
+    top: 0 !important;
+    height: 100%;
+    max-height: 100%;
+}
+.modal .modal-footer {
+    position: fixed;
+    width: 95%;
+    bottom: 0;
+}
+nav.nav-bar {
+    background-color: #3c3c3c !important;
+}
+.nav-wrapper{
+    text-align: center;
+    font-size: 1.2em;
+}
+nav.nav-bar button.colores-selector.btn.waves-effect.waves-light {
+    position: absolute;
+    right: 0;
+    float: none;
+}
+.img-selector {
+    width: 100% !important;
+    margin-top: 1px;
+}
+.modelo-selector-paper button.button-selector.btn.waves-effect.waves-light {
+    width: 19%;
+}
+button.button-footer.btn.modal-trigger.waves-effect.waves-light {
+    background: #4670b5 !important;
+    font-family: Roboto;
+    font-size: 2em !important;
+}
+.footer {
+    bottom: 200px;
+}
+button.button-footer.btn.modal-trigger.waves-effect.waves-light {
+    background: #4670b5 !important;
+    font-family: Roboto;
+    font-size: 2em !important;
+    width: fit-content;
+    padding: 25px 70px;
+    margin-top: 50px;
+}
+.modalHeader {
+    background: #3c3c3c;
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+div#backHeader, div#cartHeader{
+    width: 10%;
+    float: left;
+    text-align: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+.counterSetp{
+    text-align: center;
+    width: 80%;
+    float: left;
+    margin-top: 10px;
+}
+.stepsComp {
+    width: 100%;
+    float: left;
+    background: #3c3c3c;
+    text-align: center;
+    padding: 35px 0px;
+}
+.stetps {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-color: #3c3c3c;
+    border: 5px solid #ffffff;
+    border-radius: 50px;
+    margin: 0px 10px;
+}
+.stetps.active {
+    background-color: #ffffff;
+}
+.modal-content {
+    height: 700px;
+    overflow-y: scroll;
+}
+.stetps.step3.active, .stetps.step4.active{
+    background-color: #f8b133;
+    border-color: #f8b133;
+}
+.stetps.step9.active {
+    background-color: #4670b5;
+    border-color: #4670b5;
+}
+
+.bannerImage {
+    float: left;
+    width: 100%;
+    font-family: Roboto;
+    /* font-weight: 600; */
+    text-transform: uppercase;
+    font-size: 4em;
+    padding-top: 35px;
+    padding-bottom: 260px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+div#modalFormGraduacion .modal-content, div#modalTipoCristal .modal-content {
+    float: left;
+    width: 100%;
+    margin-top: 25px;
+}
+div#modalFormGraduacion .modal-content i.fas {
+    color: #000000;
+    font-size: 2em;
+}
+div#modalTipoCristal [type="radio"]:not(:checked)+span, [type="radio"]:checked+span{
+    font-size: 2rem;
+}
+div#modalTipoCristal form p {
+    margin-bottom: 30px;
+}
+.modal .modal-footer{
+    height: auto;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 0;
+}
+.bannerFooter {
+    width: 100%;
+    float: left;
+    margin-bottom: 25px;
+}
+.bannerFooter img{
+    width: 100%;
+}
+.modal-footer button {
+    text-transform: uppercase;
+    color: #000000 !important;
+    font-size: 2em;
+    padding: 15px 40px !important;
+    height: auto;
+    font-weight: 600;
+}
+.modal-footer button.blue-bb{
+    color: #ffffff !important;
+    background-color: #4670b5 !important;
+    margin-right: 20px !important;
+    
+}
+.modal .modal-footer {
+    height: auto;
+    position: fixed;
+    width: 100%;
+    bottom: 15px;
+    padding: 0;
+}
+div#modalFormGraduacion .row .col {
+    font-size: 1.3em !important;
+}
+div#modalFormGraduacion .row .col input:not([type]), div#modalFormGraduacion .row .col  input[type=text]:not(.browser-default){
+    font-size: 1.2em;
+}
+button.button-cancelar.blue-bb {
+    margin-right: 0px !important;
+    margin-left: 20px !important;
+}
+.modalHeader.modalHeader2 .bannerImage {
+    padding-bottom: 600px;
+}
+.infUtil {
+    float: left;
+    width: 100%;
+    border-top: 20px solid #f8b744;
+    text-align: center;
+}
+.label {
+    display: inline-block;
+    color: #f8b744;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-right: 30px;
+    vertical-align: text-bottom;
+}
+.imgCont {
+    display: inline-block;
+}
+.infoTitleUtil {
+    float: left;
+    width: 70%;
+    margin-left: 15%;
+    color: #f8b133;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 3em;
+    margin-top: 140px;
+    margin-bottom: 20px;
+}
+.infoDescUtil {
+    float: left;
+    width: 65%;
+    margin-left: 17.5%;
+    color: #000000;
+    text-align: center;
+    font-family: Roboto;
+    margin-top: 25px;
+    font-size: 2.5em;
+}
+.titleAmaMod{
+    float: left;
+    width: 70%;
+    margin-left: 15%;
+    color: #f8b133;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 3em;
+    margin-top: 100px;
+    margin-bottom: 50px;    
+}
+[type="radio"]:not(:checked)+span, [type="radio"]:checked+span{
+    padding-left: 55px;
+}
+[type="radio"]+span:before, [type="radio"]+span:after {
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+}
+[type="radio"]:not(:checked)+span:before, [type="radio"]:not(:checked)+span:after {
+    border: 5px solid #f8b133;
+}
+[type="radio"]:not(:checked)+span:before, [type="radio"]:not(:checked)+span:after, [type="radio"]:checked+span:before, [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+    border-radius: 30%;
+}
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+    background-color: #f8b133;
+    border-color:#f8b133;
+}
+form#formAntireflejos, form#formTipoCristal, form#formFotocromatico{
+    float: left;
+    width: 70%;
+    margin-left: 15%;
+    /* font-size: 2em; */
+}
+form#formAntireflejos [type="radio"]:not(:checked)+span, form#formAntireflejos [type="radio"]:checked+span, form#formFotocromatico [type="radio"]:not(:checked)+span, form#formFotocromatico [type="radio"]:checked+span{
+    font-size: 2rem;
+}
+div#modalReiniciar .modal-content h4 {
+    text-align: center;
+    font-family: Roboto;
+    /* font-weight: bold; */
+    font-size: 3em;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 150px;
+    float: left;
+}
+form#formAntireflejos p, form#formTipoCristal p, form#formFotocromatico p{
+    margin-bottom: 30px;
+}
+form#formDataUsuario, form#formDataEnvio {
+    float: left;
+    width: 100%;
+    margin-top: 60px;
+    /*height: 1000px;
+    overflow-y: scroll;*/
+}
+form#formDataUsuario .input-field>label, form#formDataEnvio .input-field>label{
+    color: #4670b5;
+    font-size: 2em;
+    font-weight: bold;
+}
+form#formDataUsuario input[type=text]:not(.browser-default), form#formDataUsuario input[type=email]:not(.browser-default), form#formDataEnvio input[type=text]:not(.browser-default), form#formDataEnvio input[type=email]:not(.browser-default){
+    margin-top: 20px;
+    height: 5rem;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+form#formDataUsuario input[type=text]:not(.browser-default):focus:not([readonly]), form#formDataUsuario input[type=text]:not(.browser-default):focus:not([readonly]), form#formDataEnvio input[type=text]:not(.browser-default):focus:not([readonly]), form#formDataEnvio input[type=text]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #f8b133;
+    -webkit-box-shadow: 0 1px 0 0 #f8b133;
+    box-shadow: 0 1px 0 0 #f8b133;
+}
+input[type=text]:not(.browser-default).invalid ~ .helper-text[data-error], input[type=email]:not(.browser-default).invalid ~ .helper-text[data-error], input[type=email]:not(.browser-default).valid ~ .helper-text[data-success]{
+    font-size: 1.2em;
+    /* margin-top: -10px; */
+}
+[type="checkbox"]:checked+span:not(.lever):before {
+    border-right: 2px solid #4670b5;
+    border-bottom: 2px solid #4670b5;
+}
+div#modalResumenGraduacion .col {
+    font-size: 1.3em !important;
+}
+div#modalResumenGraduacion input {
+    font-size: 1.2em;
+}
+div#modalResumenGraduacion form{
+    width: 100%;
+    float: left;
+    margin-top: 70px;
+}
+div#modalResumenGraduacion .col.s12.checkAmar span, div#modalResumenPedido .col.s12.checkAmar span, div#modalFormDataResumen .col.s12.checkAmar span {
+    font-weight: bold;
+    font-size: 3em !important;
+    color: #f8b133;
+    margin-top: 40px;
+}
+div#modalResumenGraduacion.modal .modal-footer{
+    margin-left: -25px;
+}
+div#modalResumenGraduacion [type="checkbox"]+span:not(.lever):before, div#modalResumenGraduacion [type="checkbox"]:not(.filled-in)+span:not(.lever):after, div#modalResumenPedido [type="checkbox"]+span:not(.lever):before, div#modalResumenPedido [type="checkbox"]:not(.filled-in)+span:not(.lever):after, div#modalFormDataResumen [type="checkbox"]+span:not(.lever):before, div#modalFormDataResumen [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px !important;
+    width: 30px !important;
+    height: 30px !important;
+    z-index: 0 !important;
+    border: 5px solid #f8b133 !important;
+    border-radius: 10px !important;
+    margin-top: 0px !important;
+    -webkit-transition: .2s;
+    transition: .2s;
+    margin-right: 20px !important;
+}
+div#modalResumenGraduacion [type="checkbox"]:checked+span:not(.lever):before, div#modalResumenPedido [type="checkbox"]:checked+span:not(.lever):before, div#modalFormDataResumen [type="checkbox"]:checked+span:not(.lever):before {
+    transform: none;
+    background-color: #f8b133 !important;
+}
+form#formDataUsuarioResumen {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
+.modal-footer button.blue-bb.ama-bb {
+    background-color: #f8b133 !important;
+}
+div#modalFormDataResumen .input-field.col.s12 {
+    margin-top: 20px;
+    border-bottom: 3px solid #c5c5c5;
+}
+div#modalFormDataResumen .row.row-min input {
+    float: right;
+    width: 60%;
+    font-size: 2.2em;
+    margin-top: -15px;
+}
+div#modalFormDataResumen .row.row-min label {
+    color: #868686;
+    font-weight: 800 !important;
+    font-size: 2.5em;
+    float: left;
+    width: 40%;
+    position: inherit;
+}
+div#modalFormDataResumen .input-field.col.s12 {
+    margin-top: 20px;
+    border-bottom: 3px solid #c5c5c5;
+    margin-bottom: 25px;
+}
+div#modalFormDataResumen .row.row-min{
+    margin-bottom: 0px;
+}
+div#modalResumenPedido .modal-content {
+    float: left;
+    width: 100%;
+}
+div#modalResumenPedido .modal-content {
+    float: left;
+    width: 100%;
+    padding: 0px;
+}
+div#modalResumenPedido .row.row-min.row-min22 .col:nth-child(1) {
+    text-align: center;
+}
+div#modalResumenPedido .row.row-min.row-min22 {
+    background-color: #ececec;
+    padding: 50px 0px;
+}
+img#image_resumen {
+    margin: auto;
+    width: 150px;
+}
+div#modalResumenPedido .row.row-min.row-min22 {
+    background-color: #ececec;
+    padding: 50px 0px;
+    color: #000000;
+    font-family: Roboto;
+    font-size: 2.5em;
+    margin-bottom: 55px !important;
+}
+div#marco_resumen, div#color_resumen{
+    margin-left: 30px;
+}
+div#modalResumenPedido .row.row-min {
+    color: #000000;
+}
+.row.row-min.rowTipoCristal, .row.row-min.rowAntirefljo, .row.row-min.rowFotocromatico {
+    padding-bottom: 30px;
+    margin-bottom: 30px !important;
+    border-bottom: 5px solid #cdcdcd;
+}
+.labelTipCristal {
+    font-size: 2em;
+    color: #4670b5;
+    font-weight: bold;
+}
+.row.row-min.row-min33 {
+    background-color: #ececec;
+    margin-top: 55px;
+    padding: 30px 0px;
+    font-size: 2.2em;
+}
+div#precio_total_resumen b {
+    padding-left: 20px;
+    color: #f8b133;
+    font-weight: bold;
+}
+div#precio_total_resumen {
+    color: #9c9b9b;
+}
+.row.row-min.rowAntirefljo .labelTipCristal, .row.row-min.rowFotocromatico .labelTipCristal{
+    color: #f8b133;
+}
+.starResumen {
+    float: left;
+    font-size: 2.5em;
+    color: white;
+    background-color: #f8b133;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    border-radius: 50px;
+    margin-top: -12px;
+}
+div#cristal_resumen {
+    font-size: 2em;
+}
+div#precio_cristal_resumen {
+    font-size: 2.25em;
+    margin-top: 20px;
+}
+div#precio_antireflejo_resumen, div#precio_fotocromatico_resumen{
+    font-size: 2.25em;
+}
+div#antireflejo_resumen, div#fotocromatico_resumen{
+    color: #f8b133;
+    font-size: 2em;
+    margin-left: 85px !important;
+}
+.row.row-min.rowTipoCristal, .row.row-min.rowAntirefljo, .row.row-min.rowFotocromatico  {
+    margin: 0px 25px;
+}
+img#image_resumen {
+    margin: auto;
+    width: 150px;
+    margin-top: 25px;
+}
+div#precio_marco_resumen {
+    font-size: 1.2em;
+}
+div#modalResumenGraduacion .modal-content i.fas {
+    color: #000000;
+    font-size: 2em;
+}
+canvas{
+    visibility: hidden !important;
+}
+.item-lente {
+    color: #000000;
+    font-size: 3em;
+    margin-bottom: 25px;
+    padding-top: 25px;
+    border-bottom: 2px solid #d3d3d3;
+    padding-bottom: 35px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#listaLentes, #listaLentes2{
+    margin: 50px;
+}
+.item-lente.active {
+    background-color: rgb(248 177 51);
+    color: #ffffff;
+}
+.item-lente a {
+    color: rgb(52 124 255 / 100%);
+    margin-left: 175px;
+}
+.description{
+    display: none;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+div#listaLentes img.imgList, div#listaLentes2 img.imgList{
+    width: 200px;
+    /*float: left;*/
+    margin-top: 10px;
+    margin-right: 25px;
+}
+.description {
+    display: none;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    font-size: .8em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 40px;
+}
+button#btnSegSe {
+    font-size: 2.5em !important;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+div#modalConfirmation .modal-content {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 2em;
+    text-align: center;
+}
+input#idPedidoConfirmacion {
+    color: red;
+    font-size: 1.5em;
+    text-align: center;
+}
+.numPer {
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-top: 40px;
+    border-bottom: 2px solid;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    width: 70%;
+    margin-left: 15%;
+}
+div#idPedidoConfirmacion {
+    font-weight: bold;
+    color: #4670b5;
+    font-size: 2em;
+}
+.titleMarcos {
+    color: rgb(248 177 51);
+    text-align: center;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+.titleMarcos.titleMarcos1{
+    margin-top: 50px;
+}
+div#listaLentes, div#listaLentes2{
+    height: 650px;
+    overflow-y: scroll;
+}
+img#imageTAKEN {
+    width: 100%;
+    display: none;
+    height: 700px;
+}
+div#modalFormGraduacionFotoReceta video#video, div#modalFormGraduacionFotoReceta canvas#canvas{
+    width: 100%;
+    height: 700px;
+}
+div#modalFormGraduacionFotoReceta canvas#canvas{
+    visibility: inherit !important;
+}
+div#modalFormGraduacionFotoReceta .modal-content {
+    width: 100%;
+    float: left;
+    margin-top: 50px;
+    height: 800px;
+    overflow-y: scroll;
+}
+button#start-camera, button#click-photo, button#contin-photo, button#reinter-photo{
+    color: #ffffff !important;
+    background-color: #4670b5 !important;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #ffffff!important;
+    font-size: 2em;
+    padding: 15px 40px !important;
+    height: auto;
+    font-weight: 600;
+    margin: auto;
+}
+div#modalFormGraduacionFotoReceta .camera-cont {
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    z-index: 9999;
+    display: none;
+}
+div#closeCame {
+    text-align: right;
+    font-size: 4em;
+    margin-right: 35px;
+}
+div#modalFormGraduacionFotoReceta video#video {
+    width: 100%;
+    height: 1500px;
+    /*object-fit: cover;*/
+}
+div#modalFormGraduacionFotoReceta canvas#canvas {
+    visibility: inherit !important;
+    display: none;
+    width: 100%;
+    height: 1500px;
+    left: 0;
+    top: 0;
+    margin-top: 0px;
+    object-fit: contain;
+}
+button#click-photo {
+    margin-left: calc(50% - 60px) !important;
+    width: 120px;
+    height: 120px;
+    border-radius: 80px;
+    background-color: #ffffff !important;
+}
+button#contin-photo, button#reinter-photo {
+    width: 40%;
+    padding: 25px 20px !important;
+    margin: 0% 5% !important;
+}
+div#cartHeader i.fas.fa-camera {
+    font-size: 1em;
+    margin-left: -20px;
+    margin-right: 20px;
+    display: none;
+}
+div#listaLentes, div#listaLentes2{
+    height: 0px;
+    transition:  all ease .4s;
+}
+div#listaLentes.active, div#listaLentes2.active{
+    height: 800px;
+    transition:  all ease .4s;
+}
+.headerLogo {
+    background-color: #3a3c3c;
+    padding: 50px 30px;
+    font-size: 4em;
+}
+.headerLogo a {
+    color: #ffffff;
+}
+.rightIcon {
+    float: right;
+    margin-right: 35px;
+}
+.descHomeMarco {
+    background-color: #f4ae36;
+    text-align: center;
+    font-size: 2.7em;
+    padding: 30px 140px;
+}
+.titleMarcos {
+    color: #000;
+    text-align: left;
+    margin: 0px 45px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 2.5em;
+    border-bottom: 5px solid #cbcbcb;
+    padding-bottom: 35px;
+}
+.starsList {
+    float: right;
+    color: #000000;
+}
+.titleMarcos.active .starsList{
+    color: #f4ae36;
+}
+i#icDwo, i#icDwo2{
+    margin-left: 20px;
+}
+.titleMarcos.active{
+    color: #f4ae36;
+}
+.item-lente {
+    width: 31.5%;
+    float: left;
+    margin-right: 1.5%;
+    text-align: center;
+    font-size: 2.5em;
+}
+div#listaLentes img.imgList, div#listaLentes2 img.imgList {
+    /* width: 150px; */
+    /* float: left; */
+    margin-top: 15px;
+    margin-right: 0px;
+}
+.imgLente {
+    width: 100%;
+    height: 200px;
+    background-color: #ffffff;
+    line-height: 210px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.item-lente a {
+    color: #4670b5;
+    margin-left: 0px;
+}
+.item-lente {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: none;
+}
+a.linkIsnta {
+    float: left;
+}
+a.linkConti {
+    float: right;
+    background: #4670b5;
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    padding-bottom: 15px;
+}
+.description {
+    display: none !important;
+}
+#listaLentes, #listaLentes2 {
+    margin: 30px;
+}
+a.linkIsnta {
+    float: left;
+    margin-top: 5px;
+}
+.lineSep {
+    width: 100%;
+    height: 3px;
+    background: #b7b7b7;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.colList {
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+div#modalFormGraduacionFotoReceta, div#modalFormGraduacionFotoReceta .modal-footer{
+    background-color: #f8b133;
+}
+div#modalFormGraduacionFotoReceta .modal-footer button{
+    color: #ffffff !important;
+}
+.pagephotNar {
+    text-align: center;
+    
+}
+.taxtBajdFPOP {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+div#start-camera {
+    background-color: #ffffff!important;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #4670b5 !important;
+    font-size: 2em;
+    padding: 15px 40px !important;
+    height: auto;
+    font-weight: 600;
+    margin: auto;
+}
+div#modalFormGraduacionFotoReceta .modal-content{
+    height: auto;
+}
+div#closeCame {
+    width: 100%;
+    float: left;
+    background: #3c3c3c;
+    text-align: left;
+    padding: 35px 0px;
+    padding-left: 45px;
+}
+button#click-photo {
+    border: 15px solid #d9d9d9;
+    width: 150px;
+    height: 150px;
+}
+.photo.imgHeadRight{
+    display: none;
+    margin-right: 30px;
+    margin-left: -40px;    
+    float: left;
+}
+div#imgRec {
+    text-align: center;
+}
+.listPedi{
+    /*height: 600px;
+    overflow-y: scroll;*/
+}
+div#recLalb {
+    color: #f8b133;
+    font-size: 2em;
+    margin-left: 85px !important;
+}
+.starResumen.starResumen2 {
+    background: #4670b5;
+}
+div#imgRec img {
+    width: 200px;
+    border: 7px solid #f8b133;
+}
+.row.row-min.rowFotoReceta .input-field.col.s4:nth-child(2), .row.row-min.rowFotoReceta .input-field.col.s4:nth-child(3){
+    margin-top: 60px;
+}
+div#delPhotoRec {
+    font-size: 3em;
+}
+.photo.imgHeadRight img, .cart.imgHeadRight img {
+    width: 55px;
+}
+/*** camara.... ***/
+div#modalFormGraduacionFotoReceta video#video, div#modalFormGraduacionFotoReceta canvas#canvas {
+    width: 100%;
+    height: 1760px;
+    object-fit: cover;
+}
+div#modalFormGraduacionFotoReceta canvas#canvas {
+    width: 100%;
+    height: 1760px !important;
+    object-fit: cover !important;
+}
+button#click-photo {
+    border: 15px solid #d9d9d9;
+    width: 150px;
+    height: 150px;
+    margin-top: -260px;
+}
+button#contin-photo, button#reinter-photo {
+    /* margin-top: -188px; */
+    /* position: absolute; */
+    /* z-index: 11111111989999; */
+    bottom: 165px;
+}
+#listaLentes, #listaLentes2 {
+    margin: 15px;
+}
+.titleMarcos{
+    margin: 0px 15px;  
+}
+.item-lente {
+    width: 33%;
+    margin-right: 0;
+}
+a.linkConti, a.linkIsnta {
+    font-size: .9em;
+}
+.modal .modal-footer.openKeyboad {
+    position: initial;
+}
+.modalHeader.modalHeader2 .bannerImage {
+    padding-bottom: 475px;
+}
+.photo.imgHeadRight img, .cart.imgHeadRight img {
+    width: 45px;
+}
+.cart.imgHeadRight {
+    margin-top: 3px;
+    margin-right: 15px;
+}
+div#modalFormData .modal-content {
+    height: 800px;
+    overflow-y: scroll;
+}
+div#modalResumenPedido .modal-content {
+    height: auto;
+}
+.listPedi {
+    /*height: 450px;
+    overflow-y: scroll;*/
+}
+div#modalFormDataResumen .modal-content {
+    height: 1200px;
+}
+div#modalFormGraduacionFotoReceta video#video, div#modalFormGraduacionFotoReceta canvas#canvas {
+    height: 1415px !important;
+    margin-bottom: -15px;
+}
+div#modalFormGraduacionFotoReceta .modal-content {
+    height: 915px;
+    overflow: hidden;
+}
+.modal .modal-footer {
+    position: inherit;
+    margin-bottom: -10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.infoTitleUtil {
+    margin-top: 90px;
+    margin-bottom: 15px;
+}
+.infoTitleUtil {
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+.infoDescUtil {
+    line-height: 1.3;
+}
+div#modalFormGraduacionFotoReceta {
+    overflow: hidden;
+}
+div#modalFormData .modal-content {
+    height: 750px;
+    overflow-y: scroll;
+}
+div#modalResumenGraduacion.modal .modal-footer {
+    margin-left: 0px; 
+}
+div#modalResumenGraduacion form {
+    margin-top: 35px;
+}
+div#modalResumenPedido .modal-content, div#modalFormDataResumen .modal-content {
+    height: 800px;
+}
+.listPedi {
+    /*height: auto;*/
+}
+.row.row-min.rowFotoReceta{
+    display: none;
+}
+div#modalResumenPedido {
+    overflow: hidden;
+}
+.modal-content {
+    height: 500px;
+    overflow-y: scroll;
+}
+.imageFotoPa img {
+    width: 55%;
+}
+div#modalFormGraduacionFotoReceta video#video, div#modalFormGraduacionFotoReceta canvas#canvas {
+    height: 1210px !important;
+    margin-bottom: -15px;
+}
+.infoTitleUtil {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+.modalHeader.modalHeader2 .bannerImage {
+    padding-bottom: 450px;
+}
+.infUtil .imgCont img{
+    width: 230px;
+}
+.infoDescUtil {
+    line-height: 1.3;
+    font-size: 2.2em;
+}
+.infoTitleUtil{
+    font-size: 2.8em;
+}
+div#modalFormData .modal-content {
+    height: 500px;
+    overflow-y: scroll;
+}
+div#modalResumenGraduacion .modal-content {
+    height: 400px;
+}
+div#modalResumenPedido .modal-content {
+    height: 650px;
+}
+div#modalResumenPedido [type="checkbox"]:not(:checked), div#modalResumenPedido [type="checkbox"]:checked, div#modalFormDataResumen [type="checkbox"]:not(:checked), div#modalFormDataResumen [type="checkbox"]:checked {
+    position: inherit;
+}
+div#modalFormDataResumen {
+    overflow: hidden;
+}
+div#modalFormDataResumen .modal-content {
+    height: 700px;
+}
+.no-banner.modal-content, div#modalFormDataResumen .no-banner.modal-content, div#modalFormData .no-banner.modal-content {
+    height: 800px;
+}
+div#modalFormDataResumen .no-banner.modal-content{
+    height: 750px;
+}
+div#modalResumenGraduacion .modal-content.no-banner {
+    height: 700px;
+}
+div#modalFormGraduacionFotoReceta .modal-content {
+    height: 650px;
+    overflow: hidden;
+}
+div#modalFormGraduacionFotoReceta video#video, div#modalFormGraduacionFotoReceta canvas#canvas {
+    width: 980px !important;
+    height: 1208px !important;
+    object-fit: initial !important;
+}
+div#modalFormGraduacionFotoReceta video#video,  div#modalFormGraduacionFotoReceta canvas#canvas{
+    position: absolute;
+    width: 800px;
+    height: 1112px;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 154px;
+}
+button#click-photo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999999999;
+    margin-bottom: 80px;
+}
+button#contin-photo, button#reinter-photo {
+    bottom: 80px;
+}
+button#contin-photo {
+    position: absolute;
+    z-index: 99999999999999;
+    right: 0;
+}
+button#reinter-photo {
+    position: absolute;
+    z-index: 99999999999999;
+    left: 0;
+}
+div#listaLentes.active, div#listaLentes2.active {
+    height: 600px;
+    transition: all ease .4s;
+}
+div#modalFormGraduacionFotoReceta video#video {
+    width: 100% !important;
+    height: auto !important;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+img#imageTAKEN {
+    width: 100%;
+    height: auto !important; 
+    /*-webkit-transform: scaleX(-1);
+    transform: scaleX(-1);   */ 
+}
+.homeList{
+    display: none;
+}
+.bienvenida {
+    background: #ebeae9;
+    text-align: center;
+}
+.logoBienv {
+    color: #3a3c3c;
+    font-size: 4em;
+    font-weight: bolder;
+    margin-top: 150px;
+    margin-bottom: 70px;
+}
+.logoBienv a {
+    color: #3a3c3c;
+    font-weight: 500;
+}
+.imgBienv img {
+    width: 80%;
+    margin-bottom: 40px;
+}
+.textBienv {
+    color: #3a3c3c;
+    font-size: 2.5em;
+    line-height: 1.2;
+    margin-bottom: 70px;
+    font-weight: 900;
+}
+.btnBiernv {
+    /* float: right; */
+    background: #4670b5;
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 5px;
+    padding-bottom: 15px;
+    width: fit-content;
+    margin: auto;
+    font-size: 2em;
+}
+.opePedRES {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.opePedRES2{
+    margin-top: 30px;
+}
+div#editItemPed, div#delItemPed {
+    font-size: 2.5em;
+}
+div#delItemPed {
+    margin-left: 20px;
+}
+img#image_resumen {
+    margin-top: 0px;
+}
+div#delPhotoRec23 {
+    margin-top: 5px;
+}
+div#delPhotoRec {
+    text-align: center;
+    margin-top: -15px;
+}
+div#modalProbarLente .modal-content p {
+    text-align: center;
+    color: #000000;
+    font-size: 2.2em;
+}
+div#modalProbarLente .modal-content p b{
+    color: #f4ae36;
+}
+div#modalProbarLente .modal-content {
+    text-align: center;
+}
+.iconIMGcont {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.iconIMGcont i.fas.fa-arrow-right {
+    color: #4670b5;
+    font-size: 4em;
+    margin-right: 15px;
+    /* float: left; */
+}
