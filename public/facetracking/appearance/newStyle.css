@@ -1074,8 +1074,8 @@ div#listaLentes.active, div#listaLentes2.active {
 div#modalFormGraduacionFotoReceta video#video {
     width: 100% !important;
     height: auto !important;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+    /*-webkit-transform: scaleX(-1);
+    transform: scaleX(-1);*/
 }
 img#imageTAKEN {
     width: 100%;

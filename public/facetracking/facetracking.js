@@ -1877,8 +1877,9 @@ function startPhotoReceta () {
       const ctx = canvas.getContext("2d");
       canvas.height = video.videoHeight;
       canvas.width = video.videoWidth;
-      ctx.translate(canvas.width, 0);
-      ctx.scale(-1, 1);
+      //ctx.translate(canvas.width, 0);
+      //ctx.scale(0, 1);
+      //ctx.scale(2, 2);
       ctx.drawImage(video, 0, 0);
       canvas.toBlob(async (blob) => {
         if (blob === null) {

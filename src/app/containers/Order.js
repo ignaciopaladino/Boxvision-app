@@ -289,6 +289,8 @@ class Order extends Component {
                   label="Imagen receta"
                   value={this.state.selectedOrder.urlReceta !== "" ? this.state.selectedOrder.urlReceta : '-'}
                   margin="normal"
+                  onClick={() => { window.open(this.state.selectedOrder.urlReceta,'_blank') }}
+                  style={{cursor: "pointer"}}
                 />
               </Grid>               
               {/*<Grid item xs={12}>
