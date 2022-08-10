@@ -110,6 +110,16 @@ export function cerrarOrder(values) {
   };
 }
 
+export function borrarOrder(values) {
+  return function(dispatch) {
+    return Axios.post("https://boxvision.com.ar/boxvision/tablets/pedido/borrar", {
+      values: values
+    })
+      .then(json => dispatch(fetchOrders()))
+      .then(json => dispatch(selectOrder(values)));
+  };
+}
+
 export function paymentOrder(values, parcial, total) {
   return function(dispatch) {
     return Axios.post("https://boxvision.com.ar/boxvision/tablets/pedido/pago", {

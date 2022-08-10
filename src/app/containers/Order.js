@@ -12,7 +12,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 import Grid from "@material-ui/core/Grid";
-import { procesarOrder, cerrarOrder, paymentOrder } from "../actions/orders";
+import { procesarOrder, cerrarOrder, borrarOrder, paymentOrder } from "../actions/orders";
 import Modal from "@material-ui/core/Modal";
 
 import store from "../../store";
@@ -116,6 +116,14 @@ class Order extends Component {
     store.dispatch(cerrarOrder(this.state.selectedOrder)).then({});
     this.setState({
       selectedOrder: { ...this.state.selectedOrder, estado: "cerrado" }
+    });
+  };
+
+  
+  handleDelete = () => {
+    store.dispatch(borrarOrder(this.state.selectedOrder)).then({});
+    this.setState({
+      selectedOrder: { ...this.state.selectedOrder, estado: "borrado" }
     });
   };
 
@@ -493,6 +501,23 @@ class Order extends Component {
                     Cerrar
                   </Button>
                 ) : null}
+              </Grid>
+              <Grid item xs>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={this.handleDelete}
+                  type="submit"
+                  style={{
+                    position: "relative",
+                    marginTop: "28px",
+                    marginRight: "0px",
+                    float: "right",
+                    backgroundColor: "red"
+                  }}
+                >
+                  Borrar
+                </Button>
               </Grid>
             </Grid>
           </div>
