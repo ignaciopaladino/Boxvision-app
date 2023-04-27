@@ -32,6 +32,9 @@ class Orders extends Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     console.log(this.props.orders);
     if (prevProps.orders !== this.props.orders) {
+      this.props.orders.forEach(order => {
+        order.fechaIngreso = order.fechaIngreso.split('T').join(' ').split('.')[0]
+      });
       this.setState({
         rowData: this.props.orders
       });

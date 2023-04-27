@@ -16,6 +16,7 @@ import { procesarOrder, cerrarOrder, borrarOrder, paymentOrder } from "../action
 import Modal from "@material-ui/core/Modal";
 
 import store from "../../store";
+import { selectTipoProduct } from "../actions/product";
 
 const styles = {
   paper: {
@@ -70,12 +71,12 @@ class Order extends Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.selectedOrderProducts !== this.props.selectedOrderProducts) {
       //console.log(this.props.selectedOrderProducts)
-      this.props.selectedOrderProducts.map(item => {
+      /*this.props.selectedOrderProducts.map(item => {
         if(item.tipo==='marco'){
           item.tipo = 'Armazón';
           item.nombre = item.label;
         } 
-      });
+      });*/
       this.setState({
         rowData: this.props.selectedOrderProducts
       });
@@ -125,6 +126,7 @@ class Order extends Component {
     this.setState({
       selectedOrder: { ...this.state.selectedOrder, estado: "borrado" }
     });
+    store.dispatch(selectTipoProduct("ordenes"));
   };
 
   handlePayment = () => {
